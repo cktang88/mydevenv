@@ -4,5 +4,8 @@
     "window.zoomLevel": 0,
     "workbench.sideBar.location": "right",
     "breadcrumbs.enabled": true,
-    "editor.renderWhitespace": "all"
+    "editor.renderWhitespace": "all",
+    "telemetry.enableTelemetry": false,
+    "telemetry.enableCrashReporter": false,
+    "editor.minimap.enabled": true
 }
