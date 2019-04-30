@@ -1,0 +1,8 @@
+{
+    "workbench.colorTheme": "Night Owl",
+    "workbench.iconTheme": "material-icon-theme",
+    "window.zoomLevel": 0,
+    "workbench.sideBar.location": "right",
+    "breadcrumbs.enabled": true,
+    "editor.renderWhitespace": "all"
+}
