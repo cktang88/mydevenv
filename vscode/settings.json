@@ -7,5 +7,7 @@
     "editor.renderWhitespace": "all",
     "telemetry.enableTelemetry": false,
     "telemetry.enableCrashReporter": false,
-    "editor.minimap.enabled": true
+    "editor.minimap.enabled": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true
 }
