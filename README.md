@@ -8,9 +8,13 @@ My dotfiles :)
 
 - Everywhere: cmd+up/down to scroll to top/bottom of page, fn+up/down to scroll fast
 
-Clam AV
+Misc software for Linux
 ---
-https://www.clamav.net/documents/installation-on-debian-and-ubuntu-linux-distributions
+- [clamAv](https://www.clamav.net/documents/installation-on-debian-and-ubuntu-linux-distributions)
+- [keepass2](https://packages.debian.org/sid/keepass2) - install via `apt`
+- [newest Node.js](https://github.com/tj/n#third-party-installers)
+- catfish (set up clrl+space shortcut, similar to Mac Finder)
+- [Redshift](http://jonls.dk/redshift/)
 
 Iterm
 ---
@@ -43,13 +47,14 @@ VSCode useful keybindings
 cmd+option+J = toggle "workbench.action.toggleMaximizedPanel"
 ```
 
-.zshrc mods:
+Zsh + mods
 ---
-Use `install.sh`
+:fire: :fire: :fire: Run `install.sh`
+
 How to install extensions - https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh
 
-- https://github.com/zsh-users/zsh-autosuggestions
-- https://github.com/zsh-users/zsh-syntax-highlighting
+- [zsh-users/zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh)
+- [zsh-users/zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh)
 - Zsh autocorrect enabled default
 - [colored-man-pages](https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/colored-man-pages/colored-man-pages.plugin.zsh)
 - custom aliases:
