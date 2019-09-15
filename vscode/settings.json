@@ -9,5 +9,10 @@
     "telemetry.enableCrashReporter": false,
     "editor.minimap.enabled": true,
     "editor.formatOnSave": true,
-    "editor.formatOnPaste": true
+    "editor.formatOnPaste": true,
+    "files.watcherExclude": {
+        "**/.cache/*/**": true,
+        "**/.git/**": true,
+        "**/node_modules/*/**": true
+    }
 }
