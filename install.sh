@@ -24,7 +24,9 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 cp .zshrc ~/.zshrc
 
 # copy .albertignore
-cp .albertignore ~/.albertignore
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+  cp .albertignore ~/.albertignore
+fi
 
 # Adds necessary packages
 apt install curl build-essential checkinstall libssl-dev
@@ -47,12 +49,14 @@ if ! command -v ruby; then
 fi
 
 # Set up FUSUMA for multi-touch gestures
-if ! command -v fusuma; then
-  apt install libinput-tools xdotool
-  gem install fusuma
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+  if ! command -v fusuma; then
+    apt install libinput-tools xdotool
+    gem install fusuma
+  fi
+  mkdir -p ~/.config/fusuma # only creates if dir doesn't already exist
+  cp ./fusuma/config.yml ~/.config/fusuma/config.yml
 fi
-mkdir -p ~/.config/fusuma # only creates if dir doesn't already exist
-cp ./fusuma/config.yml ~/.config/fusuma/config.yml
 
 ########################################################
 # Improved tooling
