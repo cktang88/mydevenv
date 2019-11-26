@@ -9,7 +9,6 @@ set -x #echo on
 # install zsh
 apt update
 apt install zsh -y
-chsh -s $(which zsh)
 
 # install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -19,7 +18,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 # Adds necessary packages
-apt-get install curl build-essential checkinstall libssl-dev
+apt install curl build-essential checkinstall libssl-dev
 
 # Install NodeJS+NPM, https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages
 curl -sL https://deb.nodesource.com/setup_13.x | bash -
@@ -29,6 +28,14 @@ apt install -y nodejs
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 source $HOME/.cargo/env
 
+# install Ruby
+apt install -y ruby
+
+# Set up FUSUMA for multi-touch gestures
+apt install libinput-tools xdotool
+gem install fusuma
+mkdir ~/.config/fusuma
+mv ./fusuma/config.yml ~/.config/fusuma/config.yml
 
 ########################################################
 # Improved tooling
@@ -55,3 +62,9 @@ apt install bat
 
 # ripgrep: improved 'grep', https://github.com/BurntSushi/ripgrep
 apt install ripgrep
+
+########################################################
+# Set default shell as zsh
+########################################################
+
+chsh -s $(which zsh)
