@@ -4,11 +4,14 @@
 # Run this script with sudo permissions
 ########################################################
 
-set -x #echo on
+set -o verbose #echo commands
+
+apt update
 
 # install zsh
-apt update
-apt install zsh -y
+if ! command -v zsh; then
+  apt install zsh -y
+fi
 
 # install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -17,31 +20,45 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
+# copy .zshrc
+cp .zshrc ~/.zshrc
+
+# copy .albertignore
+cp .albertignore ~/.albertignore
+
 # Adds necessary packages
 apt install curl build-essential checkinstall libssl-dev
 
 # Install NodeJS+NPM, https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages
-curl -sL https://deb.nodesource.com/setup_13.x | bash -
-apt install -y nodejs
+if ! command -v node; then
+  curl -sL https://deb.nodesource.com/setup_13.x | bash -
+  apt install -y nodejs
+fi
 
 # install Rust, https://www.rust-lang.org/tools/install
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-source $HOME/.cargo/env
+if ! command -v rustc; then
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+  source ~/.cargo/env
+fi
 
 # install Ruby
-apt install -y ruby
+if ! command -v ruby; then
+  apt install -y ruby
+fi
 
 # Set up FUSUMA for multi-touch gestures
-apt install libinput-tools xdotool
-gem install fusuma
-mkdir ~/.config/fusuma
-mv ./fusuma/config.yml ~/.config/fusuma/config.yml
+if ! command -v fusuma; then
+  apt install libinput-tools xdotool
+  gem install fusuma
+fi
+mkdir -p ~/.config/fusuma # only creates if dir doesn't already exist
+cp ./fusuma/config.yml ~/.config/fusuma/config.yml
 
 ########################################################
 # Improved tooling
 ########################################################
 
-# NodeJS version manager, https://github.com/tj/n
+# NodeJS version manager, https://github.com/tj/n (see also: https://github.com/tj/n#third-party-installers)
 npm i -g n
 n latest
 
@@ -68,3 +85,5 @@ apt install ripgrep
 ########################################################
 
 chsh -s $(which zsh)
+
+set +o verbose # echo commands off
