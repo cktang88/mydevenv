@@ -12,6 +12,11 @@ source ./install.sh #(can't simply execute script)
 source ~/.cargo/env # update PATH for rust tooling
 ```
 
+Theming
+---
+- [Papirus icons](https://www.xfce-look.org/p/1166289/)
+- Numix theme
+
 
 Useful things
 ---
