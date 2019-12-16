@@ -1,8 +1,7 @@
 # My dev env
 Setup
 ---
-1. clone this dir
-2. 
+
 ```bash
 git clone git@github.com:cktang88/mydevenv.git
 cd mydevenv
@@ -20,9 +19,10 @@ Theming
 
 Useful things
 ---
+- use Firefox Sync
 - VSCode: split 2 screen
 - Iterm: split 2 screen/panels
-- Chrome: redux dev tools, react dev tools, cmd+left/right = forward/backward page navigation, cmd+L = addr bar highlight
+- Chrome: redux dev tools, react dev tools, cmd+left/right = forward/backward page navigation
 - Everywhere: cmd+up/down to scroll to top/bottom of page, fn+up/down to scroll fast
 
 Misc software for Linux
