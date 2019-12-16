@@ -4,6 +4,8 @@ Setup
 1. clone this dir
 2. 
 ```bash
+git clone git@github.com:cktang88/mydevenv.git
+cd mydevenv
 chmod a+x ./install.sh
 sudo ./install.sh
 source ./install.sh #(can't simply execute script)
