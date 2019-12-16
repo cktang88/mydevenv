@@ -4,7 +4,8 @@ Setup
 1. clone this dir
 2. 
 ```bash
-sudo bash
+chmod a+x ./install.sh
+sudo ./install.sh
 source ./install.sh #(can't simply execute script)
 source ~/.cargo/env # update PATH for rust tooling
 ```
