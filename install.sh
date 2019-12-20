@@ -60,6 +60,23 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
 fi
 
 ########################################################
+# XFCE Themeing
+########################################################
+
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+  if [[ $(ps -e | grep -E -i "xfce4") ]]; then
+    # Adwaita xfce theme
+    xfconf-query -c xsettings -p /Net/ThemeName -s "Adwaita-dark"
+    # papirus dark icons
+    wget -qO- https://git.io/papirus-icon-theme-install | DESTDIR="$HOME/.icons" sh
+    xfconf-query -c xsettings -p /Net/IconThemeName -s "Papirus-Dark"
+
+    # set window manager theme to Numix
+    xfconf-query -c xfwm4 -p /general/theme -s "Numix"
+  fi
+fi
+
+#################################m#######################
 # Improved tooling
 ########################################################
 
