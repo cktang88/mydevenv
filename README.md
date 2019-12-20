@@ -24,6 +24,7 @@ Useful things
 - Iterm: split 2 screen/panels
 - Chrome: redux dev tools, react dev tools, cmd+left/right = forward/backward page navigation
 - Everywhere: cmd+up/down to scroll to top/bottom of page, fn+up/down to scroll fast
+- Laptop proper sleep - https://askubuntu.com/questions/839587/xubuntu-16-10-wont-wake-up-correctly-after-opening-lid
 
 Misc software for Linux
 ---
