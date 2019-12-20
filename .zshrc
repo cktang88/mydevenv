@@ -102,8 +102,10 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias fp="featherpad"
+
 alias ff="firefox"
 alias tn="thunar"
 
-# source ~/Downloads/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+alias fd="fdfind"
+alias sai="sudo apt install"
+alias sau="sudo apt update"

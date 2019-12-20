@@ -87,20 +87,27 @@ n latest
 # tldr: improved 'man', https://github.com/tldr-pages/tldr
 npm i -g tldr
 
-# httpie: improved 'curl', https://github.com/jakubroztocil/httpie/
-apt install httpie
-
 # exa: improved 'ls', https://github.com/ogham/exa
 cargo install exa
 
-# fd: improved 'find', https://github.com/sharkdp/fd/
-apt install fd-find
+
+
 
 # bat: improved 'cat', https://github.com/sharkdp/bat
-apt install bat
+
+# fzf: fuzzy finder, https://github.com/junegunn/fzf
+
+# fd: improved 'find', https://github.com/sharkdp/fd/ 
+# (note: binary is named `fdfind`, aliased to `fd` in .zshrc)
+
+# httpie: improved 'curl', https://github.com/jakubroztocil/httpie/
+
+# peco: interactive filtering, https://github.com/peco/peco
 
 # ripgrep: improved 'grep', https://github.com/BurntSushi/ripgrep
-apt install ripgrep
+
+apt install -y bat fd-find fzf httpie peco rigrep
+
 
 ########################################################
 # Set default shell as zsh

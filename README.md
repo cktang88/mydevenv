@@ -82,7 +82,10 @@ How to install extensions - https://github.com/zsh-users/zsh-autosuggestions/blo
 - [colored-man-pages](https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/colored-man-pages/colored-man-pages.plugin.zsh)
 - custom aliases:
 ```
-alias fp="featherpad"
 alias ff="firefox"
 alias tn="thunar"
+
+alias fd="fdfind"
+alias sai="sudo apt install"
+alias sau="sudo apt update"
 ```
