@@ -111,10 +111,11 @@ alias fd="fdfind"
 alias sai="sudo apt install"
 alias sau="sudo apt update"
 
+
 # Options to fzf command
 export FZF_COMPLETION_OPTS='+c -x'
 export FZF_COMPLETION_TRIGGER='**'
-export FZF_DEFAULT_COMMAND='fd --type f'
+export FZF_DEFAULT_COMMAND='fdfind --type f --hidden'
 
 # Use fd (https://github.com/sharkdp/fd) instead of the default find
 # command for listing path candidates.
@@ -128,3 +129,5 @@ _fzf_compgen_path() {
 _fzf_compgen_dir() {
   fd --type d --hidden --follow --exclude ".git" . "$1"
 }
+
+alias fzfp="fzf --preview 'bat --style=numbers --color=always {} | head -500'"

@@ -91,4 +91,5 @@ alias tn="thunar"
 alias fd="fdfind"
 alias sai="sudo apt install"
 alias sau="sudo apt update"
+alias fzfp="fzf --preview 'bat --style=numbers --color=always {} | head -500'"
 ```
