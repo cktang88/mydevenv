@@ -70,6 +70,7 @@ ENABLE_CORRECTION="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  fasd
   fzf
   zsh-autosuggestions
   colored-man-pages
@@ -130,4 +131,13 @@ _fzf_compgen_dir() {
   fd --type d --hidden --follow --exclude ".git" . "$1"
 }
 
+# add preview alias for fzf
 alias fzfp="fzf --preview 'bat --style=numbers --color=always {} | head -500'"
+
+# these v,o,j aliases from fasd zsh plugin
+# alias v='fasd -f -e "$EDITOR"'
+# alias o="fasd -a -e xdg-open"
+# alias j="fasd_cd -d -i"
+
+# start fasd
+eval "$(fasd --init auto)"

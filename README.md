@@ -81,15 +81,33 @@ How to install extensions - https://github.com/zsh-users/zsh-autosuggestions/blo
 - Zsh autocorrect enabled default
 - [colored-man-pages](https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/colored-man-pages/colored-man-pages.plugin.zsh)
 - [fzf extension](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/fzf) -- auto installed w/ `fzf`
+- [fasd extension](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/fasd)
 
 
-- custom aliases:
-```
+aliases
+---
+
+```bash
+# custom
 alias ff="firefox"
 alias tn="thunar"
 
-alias fd="fdfind"
 alias sai="sudo apt install"
 alias sau="sudo apt update"
+
 alias fzfp="fzf --preview 'bat --style=numbers --color=always {} | head -500'"
+
+alias fd="fdfind"
+
+# fasd
+alias a='fasd -a'        # any
+alias s='fasd -si'       # show / search / select
+alias d='fasd -d'        # directory
+alias f='fasd -f'        # file
+alias z='fasd_cd -d'     # cd, same as z,j,autojump
+
+# from fasd zsh plugin
+alias v='fasd -f -e "$EDITOR"'
+alias o="fasd -a -e xdg-open"
+alias j="fasd_cd -d -i"
 ```

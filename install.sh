@@ -91,9 +91,9 @@ npm i -g tldr
 cargo install exa
 
 
-
-
 # bat: improved 'cat', https://github.com/sharkdp/bat
+
+# fasd: cd with frecency memory
 
 # fzf: fuzzy finder, https://github.com/junegunn/fzf
 
@@ -104,7 +104,7 @@ cargo install exa
 
 # ripgrep: improved 'grep', https://github.com/BurntSushi/ripgrep
 
-apt install -y bat fd-find fzf httpie rigrep
+apt install -y bat fasd fd-find fzf httpie rigrep
 
 
 ########################################################
