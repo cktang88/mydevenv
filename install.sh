@@ -102,11 +102,9 @@ cargo install exa
 
 # httpie: improved 'curl', https://github.com/jakubroztocil/httpie/
 
-# peco: interactive filtering, https://github.com/peco/peco
-
 # ripgrep: improved 'grep', https://github.com/BurntSushi/ripgrep
 
-apt install -y bat fd-find fzf httpie peco rigrep
+apt install -y bat fd-find fzf httpie rigrep
 
 
 ########################################################

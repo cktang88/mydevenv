@@ -80,6 +80,9 @@ How to install extensions - https://github.com/zsh-users/zsh-autosuggestions/blo
 - [zsh-users/zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh)
 - Zsh autocorrect enabled default
 - [colored-man-pages](https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/colored-man-pages/colored-man-pages.plugin.zsh)
+- [fzf extension](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/fzf) -- auto installed w/ `fzf`
+
+
 - custom aliases:
 ```
 alias ff="firefox"

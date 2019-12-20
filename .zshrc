@@ -70,6 +70,7 @@ ENABLE_CORRECTION="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  fzf
   zsh-autosuggestions
   colored-man-pages
   zsh-syntax-highlighting # must be last
@@ -109,3 +110,21 @@ alias tn="thunar"
 alias fd="fdfind"
 alias sai="sudo apt install"
 alias sau="sudo apt update"
+
+# Options to fzf command
+export FZF_COMPLETION_OPTS='+c -x'
+export FZF_COMPLETION_TRIGGER='**'
+export FZF_DEFAULT_COMMAND='fd --type f'
+
+# Use fd (https://github.com/sharkdp/fd) instead of the default find
+# command for listing path candidates.
+# - The first argument to the function ($1) is the base path to start traversal
+# - See the source code (completion.{bash,zsh}) for the details.
+_fzf_compgen_path() {
+  fd --hidden --follow --exclude ".git" . "$1"
+}
+
+# Use fd to generate the list for directory completion
+_fzf_compgen_dir() {
+  fd --type d --hidden --follow --exclude ".git" . "$1"
+}
