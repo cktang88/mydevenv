@@ -24,6 +24,10 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 cp ./.zshrc ~/.zshrc
 source ~/.zshrc
 
+# to support new vim
+apt install vim-gui-common
+cp ./.vimrc ~/.vimrc
+
 # copy .albertignore
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
   cp .albertignore ~/.albertignore
