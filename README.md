@@ -35,9 +35,9 @@ Misc software for Linux
 - **[Fusuma](https://github.com/iberianpig/fusuma)** - to customize gestures for Mac-like settings - see [this](https://medium.com/@dgviranmalaka/how-to-enhance-touch-pad-gestures-like-mac-in-ubuntu-18-04-laptop-f5f25d5a0b4f) and [also this](https://dev.to/iberianpig/how-to-install-and-customize-fusuma-73l)
   - fusuma config in this repo, should auto setup in `install.sh`
   - NOTE: need to use `sudo ~/.rbenv/shims/fusuma -d` to start (the path is from `which fusuma`, the `-d` for detached), should add to autostart scripts
-
 - [Redshift](http://jonls.dk/redshift/)
 - PulseAudio - change the default `/etc/pulse/daemon.conf` to use more CPU to get higher audio quality (see `daemon.conf` file)
+- Firefox - change DPI - change ` layout.css.devPixelsPerPx` in `about:config` to 1.2ish
 
 Iterm
 ---
@@ -56,14 +56,22 @@ VSCode extensions
 - output colorizer
 - path intellisense
 - tslint
-- visual studio intellicode
+- ~visual studio intellicode~ [tabNine](https://marketplace.visualstudio.com/items?itemName=TabNine.tabnine-vscode)
+- [vscode-styled-components](https://marketplace.visualstudio.com/items?itemName=jpoissonnier.vscode-styled-components)
 
 VSCode useful keybindings
 ---
 
 ### default
 
-...
+```
+ctrl+l = select line (repeat for next lines), useful to move to beginning or end of line
+ctrl+x = cut line
+shift+alt+right = expand bracket selection (shift+alt+left to contract)
+pg-up/pg-down = REALLY fast up/down scroll (also works in other applications)
+ctrl+g = goto line #
+*** shortcuts for [select to start of line] and [select to end of line]
+```
 
 ### custom
 ```
