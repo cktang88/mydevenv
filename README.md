@@ -69,6 +69,7 @@ ctrl+l = select line (repeat for next lines), useful to move to beginning or end
 ctrl+x = cut line
 shift+alt+right = expand bracket selection (shift+alt+left to contract)
 pg-up/pg-down = REALLY fast up/down scroll (also works in other applications)
+    - [fn+up]/[fn+down] for mac
 ctrl+g = goto line #
 *** shortcuts for [select to start of line] and [select to end of line]
 ```
