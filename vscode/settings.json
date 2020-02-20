@@ -14,5 +14,7 @@
         "**/.cache/*/**": true,
         "**/.git/**": true,
         "**/node_modules/*/**": true
-    }
+    },
+    "python.jediEnabled": false,
+    "python.linting.pylintEnabled": true
 }
