@@ -59,6 +59,8 @@ VSCode extensions
 - ~visual studio intellicode~ [tabNine](https://marketplace.visualstudio.com/items?itemName=TabNine.tabnine-vscode)
 - [vscode-styled-components](https://marketplace.visualstudio.com/items?itemName=jpoissonnier.vscode-styled-components)
 
+**ALSO**: Uses microsoft lang server instead of Jedi, and pylint for linting Python
+
 VSCode useful keybindings
 ---
 
