@@ -62,6 +62,7 @@ VSCode extensions
 - [vscode-styled-components](https://marketplace.visualstudio.com/items?itemName=jpoissonnier.vscode-styled-components)
 
 **ALSO**: Uses microsoft lang server instead of Jedi, and pylint for linting Python
+- pylint enables import sorting + right click import missing deps
 
 VSCode useful keybindings
 ---
