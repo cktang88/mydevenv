@@ -48,6 +48,8 @@ TODO:
 
 VSCode extensions
 ---
+- Git lens
+- python
 - eslint
 - go
 - jest
