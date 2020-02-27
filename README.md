@@ -70,8 +70,8 @@ VSCode useful keybindings
 ### default
 
 ```
-ctrl+l = select line (repeat for next lines), useful to move to beginning or end of line
-ctrl+x, ctrl+v, ctrl+c --> works on a whole line ANYWHERE regardless of cursor position on a line if nothing selected
+cmd + left/right --> move cursor to beginning/end of line
+cmd+x, cmd+v, cmd+c --> works on a whole line ANYWHERE regardless of cursor position on a line if nothing selected
 shift+alt+right = expand bracket selection (shift+alt+left to contract)
 pg-up/pg-down = REALLY fast up/down scroll (also works in other applications)
     - [fn+up]/[fn+down] for mac
