@@ -21,9 +21,19 @@ Useful things
 ---
 - use Firefox Sync
 - VSCode: split 2 screen
-- Iterm: split 2 screen/panels + TMUX integration
+- Iterm: Tmux integration (usually binary partition -> 1x1/2, 1x1/4, 2x1/8)
 - Chrome: redux dev tools, react dev tools, cmd+left/right = forward/backward page navigation
-- Everywhere: cmd+up/down to scroll to top/bottom of page, fn+up/down to scroll fast
+- Everywhere: 
+```
+cmd+up/down --> scroll to top/bottom of page
+cmd+x, cmd+v, cmd+c --> works on a whole line regardless of cursor position on a line if nothing selected
+cmd + left/right --> move cursor to beginning/end of line
+pg-up/pg-down = REALLY fast up/down scroll
+    - [fn+up]/[fn+down] for mac
+
+ctrl+left/right/up --> switch desktop, show all windows
+```
+
 - Laptop proper sleep - https://askubuntu.com/questions/839587/xubuntu-16-10-wont-wake-up-correctly-after-opening-lid
 
 Misc software for Linux
@@ -70,11 +80,7 @@ VSCode useful keybindings
 ### default
 
 ```
-cmd + left/right --> move cursor to beginning/end of line
-cmd+x, cmd+v, cmd+c --> works on a whole line ANYWHERE regardless of cursor position on a line if nothing selected
 shift+alt+right = expand bracket selection (shift+alt+left to contract)
-pg-up/pg-down = REALLY fast up/down scroll (also works in other applications)
-    - [fn+up]/[fn+down] for mac
 ctrl+g = goto line #
 *** shortcuts for [select to start of line] and [select to end of line]
 ```
