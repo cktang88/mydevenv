@@ -31,7 +31,7 @@ cmd + left/right --> move cursor to beginning/end of line
 pg-up/pg-down = REALLY fast up/down scroll
     - [fn+up]/[fn+down] for mac
 
-ctrl+left/right/up --> switch desktop, show all windows
+ctrl+left/right/up/down --> switch desktop, show all windows(up), show all windows of application(down)
 ```
 
 - Laptop proper sleep - https://askubuntu.com/questions/839587/xubuntu-16-10-wont-wake-up-correctly-after-opening-lid
