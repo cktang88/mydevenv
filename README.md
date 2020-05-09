@@ -19,6 +19,7 @@ Theming
 
 Useful things
 ---
+- **swap [ctrl/cmd] and [caps lock] keys**
 - use Firefox Sync
 - VSCode: split 2 screen
 - Iterm: Tmux integration (usually binary partition -> 1x1/2, 1x1/4, 2x1/8)
