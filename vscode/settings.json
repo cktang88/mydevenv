@@ -17,4 +17,8 @@
     },
     "python.jediEnabled": false,
     "python.linting.pylintEnabled": true
+    "editor.codeActionsOnSave": {
+        "source.fixAll": true
+    },
+    "workbench.tree.indent": 24
 }
