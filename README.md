@@ -62,19 +62,21 @@ VSCode extensions
 - Git lens
 - python
 - eslint
-- go
-- jest
-- jest runner
-- Night Owl
 - output colorizer
 - path intellisense
-- tslint
 - Material Icon Theme
 - ~visual studio intellicode~ [tabNine](https://marketplace.visualstudio.com/items?itemName=TabNine.tabnine-vscode)
 - [vscode-styled-components](https://marketplace.visualstudio.com/items?itemName=jpoissonnier.vscode-styled-components)
 
+Only if used:
+- jest
+- jest runner
+- Night Owl
+- tslint
+- go
+
 **ALSO**: Uses microsoft lang server instead of Jedi, and pylint for linting Python
-- pylint enables import sorting + right click import missing deps
+- pylint enables import sorting + right click import missing deps, but flake8 is also good
 
 VSCode useful keybindings
 ---
