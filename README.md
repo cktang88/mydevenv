@@ -65,10 +65,11 @@ VSCode extensions
 - go
 - jest
 - jest runner
-- night owl
+- Night Owl
 - output colorizer
 - path intellisense
 - tslint
+- Material Icon Theme
 - ~visual studio intellicode~ [tabNine](https://marketplace.visualstudio.com/items?itemName=TabNine.tabnine-vscode)
 - [vscode-styled-components](https://marketplace.visualstudio.com/items?itemName=jpoissonnier.vscode-styled-components)
 
