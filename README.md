@@ -60,7 +60,8 @@ TODO:
 VSCode extensions
 ---
 - Git lens
-- python
+- open in Github: [sysoev.vscode-open-in-github](https://marketplace.visualstudio.com/items?itemName=sysoev.vscode-open-in-github)
+- python/go/elixir as needed
 - eslint
 - output colorizer
 - path intellisense
