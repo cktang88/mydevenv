@@ -76,8 +76,7 @@ Only if used:
 - tslint
 - go
 
-**ALSO**: Uses microsoft lang server instead of Jedi, and pylint for linting Python
-- pylint enables import sorting + right click import missing deps, but flake8 is also good
+**ALSO**: Use [Pylance](https://devblogs.microsoft.com/python/announcing-pylance-fast-feature-rich-language-support-for-python-in-visual-studio-code/) and maybe pylint/flake8 for python
 
 VSCode useful keybindings
 ---
