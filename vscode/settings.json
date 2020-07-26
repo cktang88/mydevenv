@@ -16,7 +16,11 @@
         "**/node_modules/*/**": true
     },
     "python.languageServer": "Pylance",
+    "python.analysis.typeCheckingMode": "basic",
     "python.linting.pylintEnabled": true,
+    "go.formatTool": "goimports",
+    "go.useLanguageServer": true,
+    "typescript.updateImportsOnFileMove.enabled": "always"
     "editor.codeActionsOnSave": {
         "source.fixAll": true
     },
