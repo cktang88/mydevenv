@@ -15,7 +15,7 @@
         "**/.git/**": true,
         "**/node_modules/*/**": true
     },
-    "python.jediEnabled": false,
+    "python.languageServer": "Pylance",
     "python.linting.pylintEnabled": true,
     "editor.codeActionsOnSave": {
         "source.fixAll": true
