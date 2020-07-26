@@ -1,0 +1,28 @@
+{
+  "workbench.colorTheme": "Night Owl",
+  "workbench.iconTheme": "material-icon-theme",
+  "window.zoomLevel": 0,
+  "workbench.sideBar.location": "right",
+  "breadcrumbs.enabled": true,
+  "editor.renderWhitespace": "all",
+  "telemetry.enableTelemetry": false,
+  "telemetry.enableCrashReporter": false,
+  "editor.minimap.enabled": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "files.watcherExclude": {
+    "**/.cache/*/**": true,
+    "**/.git/**": true,
+    "**/node_modules/*/**": true
+  },
+  "python.languageServer": "Pylance",
+  "python.analysis.typeCheckingMode": "basic",
+  "python.linting.pylintEnabled": true,
+  "go.formatTool": "goimports",
+  "go.useLanguageServer": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  "workbench.tree.indent": 24
+}
