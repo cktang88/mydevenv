@@ -20,7 +20,7 @@
     "python.linting.pylintEnabled": true,
     "go.formatTool": "goimports",
     "go.useLanguageServer": true,
-    "typescript.updateImportsOnFileMove.enabled": "always"
+    "typescript.updateImportsOnFileMove.enabled": "always",
     "editor.codeActionsOnSave": {
         "source.fixAll": true
     },
