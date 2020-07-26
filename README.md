@@ -61,22 +61,21 @@ VSCode extensions
 ---
 - Git lens
 - open in Github: [sysoev.vscode-open-in-github](https://marketplace.visualstudio.com/items?itemName=sysoev.vscode-open-in-github)
-- python/go/elixir as needed
 - eslint
 - output colorizer
 - path intellisense
 - Material Icon Theme
 - ~visual studio intellicode~ [tabNine](https://marketplace.visualstudio.com/items?itemName=TabNine.tabnine-vscode)
 - [vscode-styled-components](https://marketplace.visualstudio.com/items?itemName=jpoissonnier.vscode-styled-components)
+- Night Owl (syntax highlighting)
 
 Only if used:
 - jest
 - jest runner
-- Night Owl
-- tslint
+- elixir
 - go
 
-**ALSO**: Use [Pylance](https://devblogs.microsoft.com/python/announcing-pylance-fast-feature-rich-language-support-for-python-in-visual-studio-code/) and maybe pylint/flake8 for python
+**ALSO: Use [Pylance](https://devblogs.microsoft.com/python/announcing-pylance-fast-feature-rich-language-support-for-python-in-visual-studio-code/)** and maybe pylint/flake8 for python
 
 VSCode useful keybindings
 ---
