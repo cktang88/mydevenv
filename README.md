@@ -23,6 +23,7 @@ Useful things
 - use Firefox Sync
 - VSCode: split 2 screen
 - Iterm: Tmux integration (usually binary partition -> 1x1/2, 1x1/4, 2x1/8)
+    - use `tmux -CC new -A -s main` from [here](https://gitlab.com/gnachman/iterm2/-/wikis/tmux-Integration-Best-Practices#what-tmux-command-should-i-use)
 - Chrome: redux dev tools, react dev tools, cmd+left/right = forward/backward page navigation
 - Everywhere: 
 ```
