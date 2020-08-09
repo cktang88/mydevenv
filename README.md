@@ -50,7 +50,7 @@ Misc software for Linux
 - [Redshift](http://jonls.dk/redshift/)
 - PulseAudio - change the default `/etc/pulse/daemon.conf` to use more CPU to get higher audio quality (see `daemon.conf` file)
 - Firefox - change DPI - change ` layout.css.devPixelsPerPx` in `about:config` to 1.2ish
-- [Terminator](https://terminator-gtk3.readthedocs.io/en/latest/)
+- [Terminator](https://terminator-gtk3.readthedocs.io/en/latest/) - allows multiple panes per tab
 
 Iterm
 ---
