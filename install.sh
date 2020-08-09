@@ -28,9 +28,11 @@ source ~/.zshrc
 apt install vim-gui-common
 cp ./.vimrc ~/.vimrc
 
-# copy .albertignore
+# copy .albertignore and tmux
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
   cp .albertignore ~/.albertignore
+  cp .tmux.conf ~/.tmux.conf
+  apt install tmux
 fi
 
 # Adds necessary packages
