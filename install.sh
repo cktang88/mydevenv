@@ -28,11 +28,12 @@ source ~/.zshrc
 apt install vim-gui-common
 cp ./.vimrc ~/.vimrc
 
-# copy .albertignore and tmux
+# copy .albertignore and tmux and redshift
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
   cp .albertignore ~/.albertignore
   cp .tmux.conf ~/.tmux.conf
   apt install tmux
+  apt install redshift redshift-gtk
 fi
 
 # Adds necessary packages
