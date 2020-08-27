@@ -52,9 +52,12 @@ Misc software for Linux
 - Firefox - change DPI - change ` layout.css.devPixelsPerPx` in `about:config` to 1.2ish
 - [Terminator](https://terminator-gtk3.readthedocs.io/en/latest/) - allows multiple panes per tab
 
-Misc software for Mac
+
+Screen recording
 ---
-- [Kap](https://github.com/wulkano/Kap) - for gif/screenrecording
+- [Kap](https://github.com/wulkano/Kap) - for gif/mp4/various formats (MAC)
+- [Peek](https://github.com/phw/peek) - gif mostly, can also do mp4 (LINUX)
+- [Kazam](https://itsfoss.com/kazam-screen-recorder/) - mp4 (LINUX)
 
 Iterm
 ---
