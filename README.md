@@ -52,6 +52,10 @@ Misc software for Linux
 - Firefox - change DPI - change ` layout.css.devPixelsPerPx` in `about:config` to 1.2ish
 - [Terminator](https://terminator-gtk3.readthedocs.io/en/latest/) - allows multiple panes per tab
 
+Misc software for Mac
+---
+- [Kap](https://github.com/wulkano/Kap) - for gif/screenrecording
+
 Iterm
 ---
 TODO:
