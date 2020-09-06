@@ -74,6 +74,7 @@ VSCode extensions
 - output colorizer
 - path intellisense
 - Material Icon Theme
+- [Rainbow CSV](https://marketplace.visualstudio.com/items?itemName=mechatroner.rainbow-csv)
 - ~visual studio intellicode~ [tabNine](https://marketplace.visualstudio.com/items?itemName=TabNine.tabnine-vscode)
 - [vscode-styled-components](https://marketplace.visualstudio.com/items?itemName=jpoissonnier.vscode-styled-components)
 - Night Owl (syntax highlighting)
