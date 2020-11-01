@@ -24,5 +24,8 @@
   "editor.codeActionsOnSave": {
     "source.fixAll": true
   },
-  "workbench.tree.indent": 24
+  "workbench.tree.indent": 24,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
