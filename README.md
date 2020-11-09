@@ -48,6 +48,7 @@ Misc software for Linux
   - fusuma config in this repo, should auto setup in `install.sh`
   - NOTE: need to use `sudo ~/.rbenv/shims/fusuma -d` to start (the path is from `which fusuma`, the `-d` for detached), should add to autostart scripts
 - [Redshift](http://jonls.dk/redshift/)
+    - [does NOT work on Wayland](https://github.com/jonls/redshift#why-doesnt-redshift-work-on-wayland-eg-fedora-25)
 - PulseAudio - change the default `/etc/pulse/daemon.conf` to use more CPU to get higher audio quality (see `daemon.conf` file)
 - Firefox - change DPI - change ` layout.css.devPixelsPerPx` in `about:config` to 1.2ish
 - [Terminator](https://terminator-gtk3.readthedocs.io/en/latest/) - allows multiple panes per tab
