@@ -56,14 +56,27 @@ if ! command -v ruby; then
   apt install -y ruby
 fi
 
-# Set up FUSUMA for multi-touch gestures
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
+  # Set up FUSUMA for multi-touch gestures
   if ! command -v fusuma; then
     apt install libinput-tools xdotool
     gem install fusuma
   fi
   mkdir -p ~/.config/fusuma # only creates if dir doesn't already exist
   cp ./fusuma/config.yml ~/.config/fusuma/config.yml
+
+  # Add sound controls
+  apt install pavucontrol xfce4-pulseaudio-plugin
+
+  # Add terminator
+  add-apt-repository ppa:gnome-terminator
+  apt update
+  apt install terminator
+
+  # Add xfce4-goodies (includes whisker menu)
+  if [[ $(ps -e | grep -E -i "xfce4") ]]; then
+    apt install xfce4-goodies
+  fi
 fi
 
 ########################################################
