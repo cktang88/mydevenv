@@ -64,6 +64,7 @@ Iterm
 ---
 TODO:
 - Preferences > Profiles > Keys > set `Natural Text Editing` preset
+- Preferences > Profiles > Terminal > set `Scrollback lines` to 5000 (default 1000)
 - set color scheme to Pastel, turn off bold
 - set confirm to close tab
 
