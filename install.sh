@@ -41,7 +41,7 @@ apt install curl build-essential checkinstall libssl-dev
 
 # Install NodeJS+NPM, https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages
 if ! command -v node; then
-  curl -sL https://deb.nodesource.com/setup_13.x | bash -
+  curl -sL https://deb.nodesource.com/setup_19.x | bash -
   apt install -y nodejs
 fi
 
