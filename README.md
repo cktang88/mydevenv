@@ -65,7 +65,6 @@ Iterm
 TODO:
 - Preferences > Profiles > Keys > set `Natural Text Editing` preset
 - Preferences > Profiles > Terminal > set `Scrollback lines` to 5000 (default 1000)
-- set color scheme to Pastel, turn off bold
 - set confirm to close tab
 
 VSCode extensions
@@ -78,17 +77,15 @@ VSCode extensions
 - path intellisense
 - Material Icon Theme
 - [Rainbow CSV](https://marketplace.visualstudio.com/items?itemName=mechatroner.rainbow-csv)
-- ~visual studio intellicode~ [tabNine](https://marketplace.visualstudio.com/items?itemName=TabNine.tabnine-vscode)
 - [vscode-styled-components](https://marketplace.visualstudio.com/items?itemName=jpoissonnier.vscode-styled-components)
 - Night Owl (syntax highlighting)
 
-Only if used:
-- jest
-- jest runner
+Lang-specific:
+- vitest
 - elixir
 - go
+- python
 
-**ALSO: Use [Pylance](https://devblogs.microsoft.com/python/announcing-pylance-fast-feature-rich-language-support-for-python-in-visual-studio-code/)** and maybe pylint/flake8 for python
 
 VSCode useful keybindings
 ---
