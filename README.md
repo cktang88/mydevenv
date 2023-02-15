@@ -65,7 +65,8 @@ Iterm
 TODO:
 - Preferences > Profiles > Keys > set `Natural Text Editing` preset
 - Preferences > Profiles > Terminal > set `Scrollback lines` to 5000 (default 1000)
-- set confirm to close tab
+- Pastel color preset, turn off "brighten bold"
+- set confirm to close tab in Sessions
 
 VSCode extensions
 ---
