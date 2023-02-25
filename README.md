@@ -70,6 +70,7 @@ TODO:
 
 VSCode extensions
 ---
+- **Github CoPilot extension** - AI :)
 - Git lens (comes w/ context menu option to copy remote URL)
 - [jock.svg](https://marketplace.visualstudio.com/items?itemName=jock.svg) to preview SVGs
 - open in Github: [sysoev.vscode-open-in-github](https://marketplace.visualstudio.com/items?itemName=sysoev.vscode-open-in-github)
