@@ -11,20 +11,14 @@ source ./install.sh #(can't simply execute script)
 source ~/.cargo/env # update PATH for rust tooling
 ```
 
-Theming
----
-- [Papirus icons](https://www.xfce-look.org/p/1166289/)
-- Numix + Adwaita mix
-
-
 Useful things
 ---
 - **swap [ctrl/cmd] and [caps lock] keys**
-- use Firefox Sync
+- use **Arc Browser** :)
+  - Chrome w/ React dev tools just for FE dev
 - VSCode: split 2 screen
 - Iterm: Tmux integration (usually binary partition -> 1x1/2, 1x1/4, 2x1/8)
     - use `tmux -CC new -A -s main` from [here](https://gitlab.com/gnachman/iterm2/-/wikis/tmux-Integration-Best-Practices#what-tmux-command-should-i-use)
-- Chrome: redux dev tools, react dev tools, cmd+left/right = forward/backward page navigation
 - Everywhere: 
 ```
 cmd+up/down --> scroll to top/bottom of page
@@ -37,22 +31,6 @@ ctrl+left/right/up/down --> switch desktop, show all windows(up), show all windo
 ```
 
 - Laptop proper sleep - https://askubuntu.com/questions/839587/xubuntu-16-10-wont-wake-up-correctly-after-opening-lid
-
-Misc software for Linux
----
-- [clamAv](https://www.clamav.net/documents/installation-on-debian-and-ubuntu-linux-distributions)
-- [keepass2](https://packages.debian.org/sid/keepass2) - install via `apt`
-- **[Albert launcher](https://software.opensuse.org//download.html?project=home%3Amanuelschneid3r&package=albert)** - use [./.albertignore](./.albertignore) file
-  - add `text/*` to indexed mimetypes so it can find src code files
-- **[Fusuma](https://github.com/iberianpig/fusuma)** - to customize gestures for Mac-like settings - see [this](https://medium.com/@dgviranmalaka/how-to-enhance-touch-pad-gestures-like-mac-in-ubuntu-18-04-laptop-f5f25d5a0b4f) and [also this](https://dev.to/iberianpig/how-to-install-and-customize-fusuma-73l)
-  - fusuma config in this repo, should auto setup in `install.sh`
-  - NOTE: need to use `sudo ~/.rbenv/shims/fusuma -d` to start (the path is from `which fusuma`, the `-d` for detached), should add to autostart scripts
-- [Redshift](http://jonls.dk/redshift/) - config in `./.config/redshift.conf`
-    - [does NOT work on Wayland](https://github.com/jonls/redshift#why-doesnt-redshift-work-on-wayland-eg-fedora-25)
-- PulseAudio - change the default `/etc/pulse/daemon.conf` to use more CPU to get higher audio quality (see `daemon.conf` file)
-- Firefox - change DPI - change ` layout.css.devPixelsPerPx` in `about:config` to 1.2ish
-- [Terminator](https://terminator-gtk3.readthedocs.io/en/latest/) - allows multiple panes per tab
-
 
 Screen recording
 ---
@@ -101,10 +79,6 @@ ctrl+g = goto line #
 *** shortcuts for [select to start of line] and [select to end of line]
 ```
 
-### custom
-```
-cmd+option+J = toggle "workbench.action.toggleMaximizedPanel"
-```
 
 Zsh + mods
 ---
@@ -135,3 +109,21 @@ alias fzfp="fzf --preview 'bat --style=numbers --color=always {} | head -500'"
 
 alias fd="fdfind"
 ```
+
+(Linux) Theming
+---
+- [Papirus icons](https://www.xfce-look.org/p/1166289/)
+- Numix + Adwaita mix
+
+(Linux) Misc Software
+---
+- [keepass2](https://packages.debian.org/sid/keepass2) - install via `apt`
+- **[Albert launcher](https://software.opensuse.org//download.html?project=home%3Amanuelschneid3r&package=albert)** - use [./.albertignore](./.albertignore) file
+  - add `text/*` to indexed mimetypes so it can find src code files
+- **[Fusuma](https://github.com/iberianpig/fusuma)** - to customize gestures for Mac-like settings - see [this](https://medium.com/@dgviranmalaka/how-to-enhance-touch-pad-gestures-like-mac-in-ubuntu-18-04-laptop-f5f25d5a0b4f) and [also this](https://dev.to/iberianpig/how-to-install-and-customize-fusuma-73l)
+  - fusuma config in this repo, should auto setup in `install.sh`
+  - NOTE: need to use `sudo ~/.rbenv/shims/fusuma -d` to start (the path is from `which fusuma`, the `-d` for detached), should add to autostart scripts
+- [Redshift](http://jonls.dk/redshift/) - config in `./.config/redshift.conf`
+    - [does NOT work on Wayland](https://github.com/jonls/redshift#why-doesnt-redshift-work-on-wayland-eg-fedora-25)
+- PulseAudio - change the default `/etc/pulse/daemon.conf` to use more CPU to get higher audio quality (see `daemon.conf` file)
+- [Terminator](https://terminator-gtk3.readthedocs.io/en/latest/) - allows multiple panes per tab
