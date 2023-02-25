@@ -63,63 +63,20 @@ ENABLE_CORRECTION="true"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
+
 plugins=(
   git
-  fasd
   fzf
   zsh-autosuggestions
   colored-man-pages
+  zoxide
   zsh-syntax-highlighting # must be last
 )
-
-
-### Fix slowness of pastes with zsh-syntax-highlighting.zsh
-### See https://gist.github.com/magicdude4eva/2d4748f8ef3e6bf7b1591964c201c1ab
-pasteinit() {
-  OLD_SELF_INSERT=${${(s.:.)widgets[self-insert]}[2,3]}
-  zle -N self-insert url-quote-magic # I wonder if you'd need `.url-quote-magic`?
-}
-
-pastefinish() {
-  zle -N self-insert $OLD_SELF_INSERT
-}
-zstyle :bracketed-paste-magic paste-init pasteinit
-zstyle :bracketed-paste-magic paste-finish pastefinish
-### Fix slowness of pastes
 
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias ff="firefox"
 alias tn="thunar"
@@ -150,10 +107,7 @@ _fzf_compgen_dir() {
 # add preview alias for fzf
 alias fzfp="fzf --preview 'bat --style=numbers --color=always {} | head -500'"
 
-# these v,o,j aliases from fasd zsh plugin
-# alias v='fasd -f -e "$EDITOR"'
-# alias o="fasd -a -e xdg-open"
-# alias j="fasd_cd -d -i"
+# zoxide enabling
+eval "$(zoxide init zsh)"
 
-# start fasd
-eval "$(fasd --init auto)"
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"

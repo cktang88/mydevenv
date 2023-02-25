@@ -28,6 +28,9 @@ source ~/.zshrc
 apt install vim-gui-common
 cp ./.vimrc ~/.vimrc
 
+# move delta
+cp ./.gitconfig ~/.gitconfig
+
 # copy .albertignore and tmux and redshift
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
   cp .albertignore ~/.albertignore
@@ -108,24 +111,33 @@ n latest
 npm i -g tldr
 
 # exa: improved 'ls', https://github.com/ogham/exa
-cargo install exa
+cargo install exa --locked
 
+# zoxide: improved cd
+cargo install zoxide --locked
+
+# install delta
+cargo install git-delta --locked
 
 # bat: improved 'cat', https://github.com/sharkdp/bat
-
-# fasd: cd with frecency memory
+cargo install bat --locked
 
 # fzf: fuzzy finder, https://github.com/junegunn/fzf
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+
+# ripgrep: improved 'grep', https://github.com/BurntSushi/ripgrep
+cargo install ripgrep --locked
 
 # fd: improved 'find', https://github.com/sharkdp/fd/ 
 # (note: binary is named `fdfind`, aliased to `fd` in .zshrc)
 
 # httpie: improved 'curl', https://github.com/jakubroztocil/httpie/
 
-# ripgrep: improved 'grep', https://github.com/BurntSushi/ripgrep
 
-apt install -y bat fasd fd-find fzf httpie rigrep
-
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+  apt install -y fd-find httpie
+fi
 
 ########################################################
 # Set default shell as zsh

@@ -5,8 +5,6 @@
   "workbench.sideBar.location": "right",
   "breadcrumbs.enabled": true,
   "editor.renderWhitespace": "all",
-  "telemetry.enableTelemetry": false,
-  "telemetry.enableCrashReporter": false,
   "editor.minimap.enabled": true,
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
@@ -18,8 +16,6 @@
   "python.languageServer": "Pylance",
   "python.analysis.typeCheckingMode": "basic",
   "python.linting.pylintEnabled": true,
-  "go.formatTool": "goimports",
-  "go.useLanguageServer": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "editor.codeActionsOnSave": {
     "source.fixAll": true
