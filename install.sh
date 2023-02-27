@@ -28,8 +28,8 @@ source ~/.zshrc
 apt install vim-gui-common
 cp ./.vimrc ~/.vimrc
 
-# move delta
-cp ./.gitconfig ~/.gitconfig
+# append delta config to git config
+cat ./.gitconfig >> ~/.gitconfig
 
 # copy .albertignore and tmux and redshift
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
