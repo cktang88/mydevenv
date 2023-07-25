@@ -29,6 +29,8 @@ pg-up/pg-down = REALLY fast up/down scroll
 
 ctrl+left/right/up/down --> switch desktop, show all windows(up), show all windows of application(down)
 ```
+- Mac: ctrl + ` = switch between windows of the SAME app
+    - ctrl + tab = switch between windows of all apps
 
 - Laptop proper sleep - https://askubuntu.com/questions/839587/xubuntu-16-10-wont-wake-up-correctly-after-opening-lid
 
