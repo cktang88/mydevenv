@@ -13,7 +13,7 @@ source ~/.cargo/env # update PATH for rust tooling
 
 Useful things
 ---
-- **swap [ctrl/cmd] and [caps lock] keys**
+- **swap [`] and [caps lock] keys**
 - use **Arc Browser** :)
   - Chrome w/ React dev tools just for FE dev
 - VSCode: split 2 screen
@@ -26,6 +26,7 @@ cmd+x, cmd+v, cmd+c --> works on a whole line regardless of cursor position on a
 cmd + left/right --> move cursor to beginning/end of line
 pg-up/pg-down = REALLY fast up/down scroll
     - [fn+up]/[fn+down] for mac
+cmd+backspace = backspaces entire word/line depending on app (eg. MS Word backspaces entire word).
 
 ctrl+left/right/up/down --> switch desktop, show all windows(up), show all windows of application(down)
 ```
