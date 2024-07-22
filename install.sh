@@ -110,9 +110,6 @@ n latest
 # tldr: improved 'man', https://github.com/tldr-pages/tldr
 npm i -g tldr
 
-# exa: improved 'ls', https://github.com/ogham/exa
-cargo install exa --locked
-
 # zoxide: improved cd
 cargo install zoxide --locked
 
