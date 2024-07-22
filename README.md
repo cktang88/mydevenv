@@ -16,9 +16,8 @@ Useful things
 - **swap [`] and [caps lock] keys**
 - use **Arc Browser** :)
   - Chrome w/ React dev tools just for FE dev
-- VSCode: split 2 screen
-- Iterm: Tmux integration (usually binary partition -> 1x1/2, 1x1/4, 2x1/8)
-    - use `tmux -CC new -A -s main` from [here](https://gitlab.com/gnachman/iterm2/-/wikis/tmux-Integration-Best-Practices#what-tmux-command-should-i-use)
+- Cursor (replaces VSCode)
+- Warp (terminal)
 - Everywhere: 
 ```
 cmd+up/down --> scroll to top/bottom of page
@@ -49,9 +48,8 @@ TODO:
 - Pastel color preset, turn off "brighten bold"
 - set confirm to close tab in Sessions
 
-VSCode extensions
+VSCode/Cursor extensions
 ---
-- **Github CoPilot extension** - AI :)
 - Git lens (comes w/ context menu option to copy remote URL)
 - [jock.svg](https://marketplace.visualstudio.com/items?itemName=jock.svg) to preview SVGs
 - open in Github: [sysoev.vscode-open-in-github](https://marketplace.visualstudio.com/items?itemName=sysoev.vscode-open-in-github)
