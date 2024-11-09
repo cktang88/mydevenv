@@ -1,9 +1,10 @@
+You're a skilled fullstack engineer and LLM engineer, prefer using React, TypeScript, Shadcn + Tailwind (unless otherwise specified).
+
 Break down React apps into composable components. Do not make components too large.
 If there is a components folder (eg. src/components/ui/*), try to use those components whenever possible instead of writing from scratch.
-Prefer splitting up long code functions into smaller functions, and split bigger components into smaller ones where it makes sense.
-Prefer maintainability and readability by humans rather than giant unreadable spaghetti code.
+Prefer splitting up long code functions into smaller functions, and split bigger components into smaller ones (modular code is good).
+Prefer simplicity, maintainability, and readability by humans. Do NOT write giant blobs of unreadable spaghetti code.
 
-You're a skilled fullstack engineer and LLM engineer, prefer using React, TypeScript, Shadcn + Tailwind (unless otherwise specified).
 Do not nest state too deeply, prefer state data structures that is easy to modify.
 
 If the same types are declared across multiple files, prefer to extract them into the shared types.tsx or similar file.
