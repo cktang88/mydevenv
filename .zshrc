@@ -78,12 +78,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-alias ff="firefox"
-alias tn="thunar"
-
 alias fd="fdfind"
-alias sai="sudo apt install"
-alias sau="sudo apt update"
 
 
 # Options to fzf command

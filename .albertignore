@@ -1,6 +1,0 @@
-# General ignores
-node_modules
-bower_components
-bin
-dist
-.git

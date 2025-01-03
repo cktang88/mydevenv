@@ -18,7 +18,7 @@
   "python.linting.pylintEnabled": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "editor.codeActionsOnSave": {
-    "source.fixAll": true
+    "source.fixAll": "explicit"
   },
   "workbench.tree.indent": 24,
   "[typescriptreact]": {
