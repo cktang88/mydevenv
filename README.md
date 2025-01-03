@@ -75,7 +75,6 @@ VSCode useful keybindings
 
 ```
 cmd+b = toggle sidebar visibility (default hidden)
-shift+alt+right = expand bracket selection (shift+alt+left to contract)
 ctrl+g = goto line #
 *** shortcuts for [select to start of line] and [select to end of line]
 ```
