@@ -1,4 +1,4 @@
-# My dev env
+# My dev env (MacOS only)
 Setup
 ---
 
@@ -29,8 +29,8 @@ cmd+backspace = backspaces entire word/line depending on app (eg. MS Word backsp
 
 ctrl+left/right/up/down --> switch desktop, show all windows(up), show all windows of application(down)
 ```
-- Mac: ctrl + ` = switch between windows of the SAME app
-    - ctrl + tab = switch between windows of all apps
+- ctrl + ` = switch between windows of the SAME app
+- ctrl + tab = switch between windows of all apps
 
 Screen recording
 ---
