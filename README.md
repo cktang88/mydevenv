@@ -16,7 +16,7 @@ Useful things
 - **swap [`] and [caps lock] keys**
 - use **Arc Browser** :)
   - Chrome w/ React dev tools just for FE dev
-- Cursor (replaces VSCode) - see [.cursorrules](./cursorrules)
+- Cursor (replaces VSCode) - see [.cursorrules](https://github.com/cktang88/mydevenv/blob/master/.cursorrules)
 - Warp (terminal)
 - Everywhere: 
 ```
