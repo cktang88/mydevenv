@@ -2,6 +2,8 @@
 Setup
 ---
 
+[Mos](https://mos.caldis.me/) to fix 3rd party mouse scroll (speed + smooth anim)
+
 ```bash
 git clone git@github.com:cktang88/mydevenv.git
 cd mydevenv
