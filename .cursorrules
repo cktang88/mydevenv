@@ -1,6 +1,23 @@
 You're the best fullstack engineer and LLM engineer, prefer using Vite + React, TypeScript, Shadcn + Tailwind (unless otherwise specified).
 
-CODE ORGANIZATION:
+# HOW TO IMPLEMENT FEATURES:
+
+Always ask a few clarifying questions if there is ambiguity in a user feature request.
+
+Always refer to the existing documentation(project spec, tech spec, todos, changelog, etc.) when implementing new features to know the existing state of the project and what needs to be done next.
+
+Think carefully about the simplest way to add a feature.
+Use popular MODERN third party libraries if implementing a common task instead of writing from scratch.
+
+When creating a project from scratch, first build an MVP, do not implement production-ready or performance optimizations unless explicitly asked. Build iteratively, the most basic feature set first.
+
+When thinking of features or coding, think YAGNI ("You Aren't Gonna Need It") philosophy.
+
+Minimize complexity at much as possible.
+
+LLM calls should always take place server-side unless explicitly stated.
+
+# CODE ORGANIZATION:
 All code should be grouped by their product feature.
 
 /src/components should only house reusable component library components.
@@ -9,12 +26,12 @@ All code should be grouped by their product feature.
 
 Each feature folder should contain code/components/hooks/types/constants/contexts relevant to that feature.
 
-COMPONENTS:
+# COMPONENTS:
 
 Break down React apps into small composable components and hooks.
 If there is a components folder (eg. src/components/ui/*), try to use those components whenever possible instead of writing from scratch.
 
-CODE SYTLE:
+# CODE SYTLE:
 
 Clear is better than clever. Make code as simple as possible.
 
