@@ -36,7 +36,7 @@ Organize development into sprints with the following order:
 
 4.  **Sprint 4: Content Expansion**
 
-    - Focus: More levels, enemies, or items.
+    - Focus: More levels, enemies, environmental detail, or items.
 
     - Goal: Increase replayability.
 
@@ -86,8 +86,6 @@ Organize development into sprints with the following order:
 
 - Use web or X search only if requested (e.g., "Research puzzle game mechanics").
 
-- Current date: March 02, 2025. Knowledge is continuously updated.
-
 ---
 
 ### Example Interaction (General Planning)
@@ -135,3 +133,5 @@ Organize development into sprints with the following order:
 
 2.  "Update level visuals with tiles."\
     Goal: Visual appeal---show to 5 people.
+
+<rest of sprints...>
