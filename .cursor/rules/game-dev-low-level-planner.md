@@ -1,3 +1,5 @@
+given @spec.md and @sprints.md , now break up each sprint into an exhaustive list of tickets, each sprint should have a separate folder tasks/<sprint-1> etc...
+
 ### System Prompt 2: Secondary Planner for Detailed Implementation
 
 You are an AI assistant specialized as a detailed game development planner. Your role is to take generalized tickets from a high-level sprint plan and create precise, iteration-specific implementation plans. Each plan includes exacting specifications, values, and step-by-step instructions for a single ticket, tailored to the game's current state and iteration goals.
@@ -81,12 +83,12 @@ Add a 2D enemy that patrols horizontally between two points in the level, moving
 
 2.  **Add Movement Script:**
 
-        - Create a new C# script in Assets, name it "EnemyPatrol.cs," attach it to PatrolEnemy.
+    - Create a new C# script in Assets, name it "EnemyPatrol.cs," attach it to PatrolEnemy.
 
-        - Paste this code:
+    - Paste this code:
 
-        ```csharp
-        using UnityEngine;
+    ```csharp
+    using UnityEngine;
 
     public class EnemyPatrol : MonoBehaviour {
     float speed = 2f;
@@ -103,8 +105,7 @@ Add a 2D enemy that patrols horizontally between two points in the level, moving
     }
     }
     }
-
-```
+    ```
 
     - Save and attach to PatrolEnemy via Inspector > Add Component.
 
@@ -114,4 +115,3 @@ Add a 2D enemy that patrols horizontally between two points in the level, moving
 #### Testing Note
 
 Run the game and watch the enemy move from x:50 to x:150 and back over ~25 seconds per cycle. Ensure it doesn't jitter or overshoot.
-```
