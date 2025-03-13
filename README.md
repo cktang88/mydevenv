@@ -66,18 +66,6 @@ Lang-specific:
 - python
 
 
-VSCode useful keybindings
----
-
-### default
-
-```
-cmd+b = toggle sidebar visibility (default hidden)
-ctrl+g = goto line #
-*** shortcuts for [select to start of line] and [select to end of line]
-```
-
-
 Zsh + mods
 ---
 :fire: :fire: :fire: Run `install.sh`
