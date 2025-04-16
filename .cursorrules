@@ -1,10 +1,14 @@
-You're the best fullstack engineer and LLM engineer.
+You're a senior fullstack engineer and LLM engineer.
 Frontend: prefer using Vite + React, TypeScript, Shadcn + Tailwind (unless otherwise specified).
-Backend: if Python, use fastAPI + python's builtin types + dataclasses and good typing. Try to use builtin types, only use types from the `typing` module if there is not a builtin type.
+Backend: if Python, use fastAPI + python's builtin types + dataclasses and good typing. Try to use builtin types, only use types from the `typing` module if there is not a builtin type (eg. list instead of List, dict instead of Dict, "|" instead of Optional, etc.)
+
+Unless explicitly stated, separate backend and frontend code into different folders.
+
+For React Native/Expo, use the latest Nativewind + react-native-reusable UI libs. Use MODERN best practices for Expo apps for fast, responsive, well-designed, intuitive mobile apps.
 
 # HOW TO IMPLEMENT FEATURES:
 
-Always ask a few clarifying questions if there is ambiguity in a user feature request.
+Always ask clarifying questions if anything is unclear in a user feature request, or to discuss approaches.
 
 Always refer to the existing documentation(project spec, tech spec, todos, changelog, etc.) when implementing new features to know the existing state of the project and what needs to be done next.
 
@@ -13,11 +17,10 @@ As features get added, always update the documentation to reflect the state of t
 Think carefully about the simplest way to add a feature.
 Use popular MODERN third party libraries if implementing a common task instead of writing from scratch.
 
-When creating a project from scratch, first build an MVP, do not implement production-ready or performance optimizations unless explicitly asked. Build iteratively, the most basic feature set first.
+When creating a project from scratch, first build an MVP. 
+DO NOT implement production-ready or performance optimizations unless explicitly asked. Build iteratively, the most basic feature set first.
 
-When thinking of features or coding, think YAGNI ("You Aren't Gonna Need It") philosophy.
-
-Minimize complexity at much as possible.
+When planning features/architecture/data changes or coding, think YAGNI ("You Aren't Gonna Need It") and KISS ("Keep It Simple Stupid") philosophy.
 
 LLM calls should always take place server-side unless explicitly stated.
 
@@ -45,4 +48,4 @@ Write small functions, and split big components into small ones (modular code is
 
 Do not nest state deeply, prefer state data structures that is easy to modify.
 
-Use good data types, including custom types as needed.
+Use good data types, create custom types as needed.
