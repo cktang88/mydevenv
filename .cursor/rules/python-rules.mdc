@@ -1,0 +1,38 @@
+# Cursor Rules for Python Code Generation
+
+## File Structure & Organization
+
+1.  **Multi-File Projects:** For non-trivial scripts involving distinct concerns (e.g., data structures, I/O, core logic), organize code into multiple files.
+    * Use `custom_types.py` (or similar) for defining data structures (e.g., `dataclasses`).
+    * Use `helpers.py` (or `utils.py`) for utility functions, especially those related to I/O, data parsing, and validation.
+    * Use `main.py` for the primary application logic, orchestrating calls to helpers and using defined types.
+    * Consider a `config.py` for constants if complexity warrants it.
+2.  **Separation of Concerns:** Strictly separate I/O operations, data parsing/validation, business logic calculations, and application flow/entry point logic into different functions and modules.
+
+## Data Modeling & Types
+
+3.  **Use Dataclasses:** Prefer `dataclasses` over dictionaries or tuples for representing structured data entities (e.g., records read from files, API responses). Ensure dataclasses have appropriate type hints.
+4.  **Mandatory Type Hinting:** Add type hints (`typing` module) to *all* function signatures (parameters and return types) and significant variables within function bodies. Use specific types (e.g., `list[str]`, `Decimal`, `datetime`) rather than generic ones (`Any`, `List`) where possible.
+5.  **Use `Decimal` for Finance:** Always use `from decimal import Decimal` for financial calculations or any context requiring precise arithmetic, avoiding floating-point errors.
+6.  **Use `datetime` for Dates/Times:** Use the `datetime` module for handling dates and times.
+7.  **Prefer Booleans over String Flags:** Use boolean flags (`True`/`False`) instead of comparing specific strings where appropriate (e.g., `is_active: bool` instead of `status == "active"`).
+
+## Function & Logic Design
+
+8.  **Small, Focused Functions:** Write small functions that perform a single, well-defined task.
+9.  **Extract Complex Logic:** If a function becomes complex, extract sub-logic into separate helper functions (even private ones using `_` prefix if only used internally within the module). Example: Extracting specific tier calculations from a main waterfall function.
+10. **Parse Early:** Perform data parsing (e.g., string to `Decimal`, string to `datetime`, string to `bool`) as close to the data source (e.g., within file reading functions) as possible. Populate dataclasses or variables with the correct, final types immediately.
+11. **Clarity over Premature Optimization:** Write clear, readable code first. Only optimize if performance bottlenecks are identified. Use descriptive variable and function names.
+
+## Input/Output & Execution
+
+12. **Command-Line Arguments:** Use the `argparse` module to handle command-line arguments for script inputs (like file paths, configuration options), making scripts more flexible.
+13. **Clean Entry Point:** Keep the `if __name__ == "__main__":` block concise. It should primarily handle argument parsing, basic input validation (like file existence checks), and calling the main application function. Avoid putting complex logic or setup (like dummy file creation) directly in this block unless it's trivial example setup.
+14. **Specific Error Handling:** Use specific exception types (`FileNotFoundError`, `ValueError`, `TypeError`, etc.) in `try...except` blocks. Avoid catching generic `Exception` unless necessary, and provide informative error messages.
+
+## Style & Comments
+
+15. **PEP 8:** Adhere strictly to PEP 8 style guidelines (use tools like `black` or `ruff` for formatting).
+16. **Docstrings:** Write clear docstrings for all modules and public functions, explaining their purpose, arguments, and return values.
+17. **Comments for "Why":** Use comments primarily to explain *why* a certain approach was taken or to clarify non-obvious logic, rather than simply stating *what* the code does (which should be clear from the code itself). Use `NOTE:` or `TODO:` prefixes where appropriate.
+18. **Modern Python Features:** Utilize modern Python features like f-strings for formatting, context managers (`with open(...)`), and list comprehensions where they improve clarity and conciseness.
