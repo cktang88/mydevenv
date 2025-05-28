@@ -15,7 +15,7 @@ source ~/.cargo/env # update PATH for rust tooling
 
 Useful things
 ---
-- **swap [`] and [caps lock] keys**
+- **swap [`] and [caps lock] keys** w Karabiner
 - use **Arc Browser** :)
   - Chrome w/ React dev tools just for FE dev
 - Cursor (replaces VSCode) - see [.cursorrules](https://github.com/cktang88/mydevenv/blob/master/.cursorrules)
@@ -48,22 +48,15 @@ TODO:
 
 VSCode/Cursor extensions
 ---
-- Git lens (comes w/ context menu option to copy remote URL)
+- Git lens (shows git blame + has context menu option to copy remote URL)
 - [jock.svg](https://marketplace.visualstudio.com/items?itemName=jock.svg) to preview SVGs
 - open in Github: [sysoev.vscode-open-in-github](https://marketplace.visualstudio.com/items?itemName=sysoev.vscode-open-in-github)
 - eslint
-- output colorizer
-- path intellisense
 - Material Icon Theme
 - [Rainbow CSV](https://marketplace.visualstudio.com/items?itemName=mechatroner.rainbow-csv)
-- [vscode-styled-components](https://marketplace.visualstudio.com/items?itemName=jpoissonnier.vscode-styled-components)
 - Night Owl (syntax highlighting)
 
-Lang-specific:
-- vitest
-- elixir
-- go
-- python
++ any lang specific mods
 
 
 Zsh + mods
