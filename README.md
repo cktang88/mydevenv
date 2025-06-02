@@ -38,13 +38,7 @@ Screen recording
 ---
 - [Kap](https://github.com/wulkano/Kap) - for gif/mp4/various formats (MAC)
 
-Iterm
----
-TODO:
-- Preferences > Profiles > Keys > set `Natural Text Editing` preset
-- Preferences > Profiles > Terminal > set `Scrollback lines` to 5000 (default 1000)
-- Pastel color preset, turn off "brighten bold"
-- set confirm to close tab in Sessions
+Warp (replaces Iterm)
 
 VSCode/Cursor extensions
 ---
@@ -57,6 +51,11 @@ VSCode/Cursor extensions
 - Night Owl (syntax highlighting)
 
 + any lang specific mods
+
+⚠️ NOTE: Set Changed Files view to TREE
+
+eg. ![image](https://github.com/user-attachments/assets/51a7b596-6da2-4df6-8f46-ee3005fbd06d)
+
 
 
 Zsh + mods
