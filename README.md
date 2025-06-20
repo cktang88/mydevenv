@@ -1,4 +1,11 @@
 # My dev env (MacOS only)
+
+# TOOLING
+
+- oxlint instead of eslint
+- uv and rye for python dep management
+- use [ast-grep](https://ast-grep.github.io/) (`sg`) instead of grep --> tell cursor/claude code to use this too... 
+
 Setup
 ---
 
@@ -45,7 +52,7 @@ VSCode/Cursor extensions
 - Git lens (shows git blame + has context menu option to copy remote URL)
 - [jock.svg](https://marketplace.visualstudio.com/items?itemName=jock.svg) to preview SVGs
 - open in Github: [sysoev.vscode-open-in-github](https://marketplace.visualstudio.com/items?itemName=sysoev.vscode-open-in-github)
-- eslint
+- eslint (though ideally should use oxlint?)
 - Material Icon Theme
 - [Rainbow CSV](https://marketplace.visualstudio.com/items?itemName=mechatroner.rainbow-csv)
 - Night Owl (syntax highlighting)
