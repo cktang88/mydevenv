@@ -4,7 +4,14 @@
 
 - oxlint instead of eslint
 - uv and rye for python dep management
-- use [ast-grep](https://ast-grep.github.io/) (`sg`) instead of grep --> tell cursor/claude code to use this too... 
+- use [ast-grep](https://ast-grep.github.io/) (`sg`) instead of grep --> tell cursor/claude code to use this too...
+
+Claude Code
+---
+- see [.claude](./.claude) for user memory
+- `/loop 30m correct any ci errors for all my open prs` - scheduled task https://code.claude.com/docs/en/scheduled-tasks
+
+
 
 Setup
 ---
