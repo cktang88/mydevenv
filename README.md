@@ -48,10 +48,6 @@ ctrl+left/right/up/down --> switch desktop, show all windows(up), show all windo
 - ctrl + ` = switch between windows of the SAME app
 - ctrl + tab = switch between windows of all apps
 
-Screen recording
----
-- [Kap](https://github.com/wulkano/Kap) - for gif/mp4/various formats (MAC)
-
 Warp (replaces Iterm)
 
 VSCode/Cursor extensions
@@ -84,15 +80,3 @@ How to install extensions - https://github.com/zsh-users/zsh-autosuggestions/blo
 - [fzf extension](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/fzf) -- auto installed w/ `fzf`
 - zoxide - https://github.com/ajeetdsouza/zoxide
 - delta - good git diff https://github.com/dandavison/delta
-
-
-aliases
----
-
-```bash
-# custom
-
-alias fzfp="fzf --preview 'bat --style=numbers --color=always {} | head -500'"
-
-alias fd="fdfind"
-```
