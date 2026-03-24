@@ -2,8 +2,8 @@
 
 # TOOLING
 
-- oxlint instead of eslint
-- uv and rye for python dep management
+- oxlint/oxfmt instead of eslint
+- uv for python dep management
 - use [ast-grep](https://ast-grep.github.io/) (`sg`) instead of grep --> tell cursor/claude code to use this too...
 
 Claude Code
