@@ -5,3 +5,4 @@
 5. NEVER guess at third party SDKs/APIs/libraries/extenal deps. Always read the source code directly and thoroughly.
 6. Write PR summaries about what changed from a user/reviewer perspective, not what code was touched.
 7. NEVER force push without asking.
+8. Always support your thinking and answers with exact code lines/functions/etc whenever possible.
