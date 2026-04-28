@@ -37,7 +37,7 @@
 
 ## DEPENDENCY MANAGEMENT
 
-- **Python**: Use `uv` or `rye`
+- **Python**: Use `uv` for env/deps, `ruff` for lint+format, `ty` for type checking
 - **Tailwind + Shadcn + Vite**: Follow https://ui.shadcn.com/docs/installation/vite
 
 ---
@@ -61,17 +61,6 @@
 ### Pre-commit hooks
 - Use **prek** (https://github.com/j178/prek) to manage pre-commit hooks
 - Run **oxlint** (and other fast linters/formatters) via prek before commits
-
----
-
-## FRAMEWORK-SPECIFIC
-
-### Love2D
-Always run in debug mode with output piping to catch errors:
-```bash
-love . > output.txt 2>&1
-```
-Fix any errors found in logs before proceeding.
 
 ---
 
