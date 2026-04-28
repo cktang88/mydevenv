@@ -42,6 +42,24 @@
 
 ---
 
+## PREFERRED STACK
+
+### Frontend
+- **Build tool**: Use **Vite Plus** (includes oxlint) for new projects
+- **Routing**: Prefer **TanStack Router**
+- **Data fetching**: Prefer **TanStack Query** (React Query)
+- **Compiler**: Always use **React Compiler** — do not write `useMemo` / `useCallback` / `memo` / unnecessary `useEffect`
+
+### Backend
+- Prefer **Hono** or **Elysia** over Express
+
+### Avoid
+- Next.js
+- Ruby on Rails
+- React Router (use TanStack Router instead)
+
+---
+
 ## FRAMEWORK-SPECIFIC
 
 ### Love2D
@@ -81,6 +99,8 @@ Each feature folder contains:
 ## COMPONENT GUIDELINES
 
 ### React
+- **No `useEffect`**: Avoid `useEffect` for derived state, data fetching, or syncing. See https://github.com/alejandrobailo/no-use-effect
+- **Use React Compiler**: Rely on the React Compiler instead of manual `useMemo` / `useCallback` / `memo`. Do not hand-write memoization.
 - **Break down into small, composable components and hooks**
 - **Reuse existing components**: Check `/src/components/ui/*` before creating new ones
 - **Split large components** into smaller, focused ones
