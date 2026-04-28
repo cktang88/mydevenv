@@ -17,6 +17,8 @@
 
 ### 2. During Implementation
 - **Use modern, popular libraries** for common tasks instead of writing from scratch
+- **Prefer SDKs over direct API calls:** When integrating with an API, first look for official or well-maintained SDKs before calling HTTP endpoints directly
+- **Use OSS libraries for generic functionality:** Before implementing generic capabilities like rate limiting, tables/grids, pathfinding, math algorithms, image processing, validation, parsing, queues, caching, or similar infrastructure, look for established open-source libraries that already solve the problem
 - **Frontend API calls**: Only call backend routes that exist. If missing, implement backend first
 - **LLM calls**: Always server-side unless explicitly stated otherwise
 - **Update documentation** as you add features to reflect the current codebase state
