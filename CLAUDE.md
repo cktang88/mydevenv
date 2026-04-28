@@ -58,6 +58,10 @@
 - Ruby on Rails
 - React Router (use TanStack Router instead)
 
+### Pre-commit hooks
+- Use **prek** (https://github.com/j178/prek) to manage pre-commit hooks
+- Run **oxlint** (and other fast linters/formatters) via prek before commits
+
 ---
 
 ## FRAMEWORK-SPECIFIC
