@@ -4,3 +4,11 @@
 # Supply-chain: rolling 7-day cooldown on new releases.
 # Requires uv >= 0.9.17 for the duration-string form.
 exclude-newer = "7 days"
+
+# Dependency-confusion defense. When multiple indexes are configured,
+# only resolve a package from the first index that matches its name —
+# never fall back to PyPI for an internal package. This is uv's
+# default; pinning explicitly so future drift can't silently weaken it.
+index-strategy = "first-index"
+
+# allow-insecure-host = []   # default; never add hosts here without good reason

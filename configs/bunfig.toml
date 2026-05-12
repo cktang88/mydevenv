@@ -2,8 +2,27 @@
 # Installed to ~/.bunfig.toml by install.sh.
 
 [install]
-# Supply-chain: 7 days, in seconds.
+# Pin registry explicitly so env vars or rogue project configs
+# cannot silently redirect installs elsewhere.
+registry = "https://registry.npmjs.org/"
+
+# Supply-chain: refuse versions younger than 7 days (in seconds).
 minimumReleaseAge = 604800
 
-# Pin exact versions.
+# Pin exact versions in package.json instead of caret ranges.
 exact = true
+
+# Block ALL lifecycle scripts (preinstall/install/postinstall/prepare).
+# Overrides Bun's built-in top-500 trustedDependencies allowlist.
+# Re-enable per-project via package.json "trustedDependencies".
+ignoreScripts = true
+
+# Use text lockfile (bun.lock) — diffable in PRs, unlike the binary
+# bun.lockb. Default since Bun 1.2; pinned explicitly.
+saveTextLockfile = true
+
+# Optional vulnerability scanner. Run before enabling:
+#   bun add -d @socketsecurity/bun-security-scanner
+# then uncomment:
+# [install.security]
+# scanner = "@socketsecurity/bun-security-scanner"

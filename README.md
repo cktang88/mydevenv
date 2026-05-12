@@ -19,8 +19,11 @@ existing global configs are backed up before overwrite.
 | Concern | Mechanism | Tools |
 |---|---|---|
 | 7-day min release age (supply-chain cooldown) | refuse install of versions younger than the cutoff | npm, pnpm, yarn, bun, uv, pip |
-| Lifecycle scripts blocked by default | no `postinstall` / `preinstall` code execution | npm (`ignore-scripts`), yarn (`enableScripts: false`), pnpm (default in v10+), bun (default outside trusted list) |
+| Lifecycle scripts blocked | no `postinstall` / `preinstall` code execution | npm (`ignore-scripts`), yarn (`enableScripts: false`), bun (`ignoreScripts=true` — overrides Bun's top-500 trusted list), pnpm (default since v10) |
 | Lockfile-poisoning protection | re-resolve lockfile against the registry | yarn `enableHardenedMode: true` |
+| Dependency-confusion defense | with multiple indexes, never fall back to PyPI for an internal name | uv `index-strategy="first-index"` (explicit pin of default) |
+| Registry pinning | prevent env/config from silently redirecting installs | bun `registry="https://registry.npmjs.org/"` |
+| Diffable lockfiles | reviewable in PRs | bun `saveTextLockfile=true` |
 | Audit gate | `npm audit` only fails on high/critical | npm `audit-level=high` |
 | Reproducibility | exact-version pinning | npm `save-exact=true`, bun `exact=true` |
 | Forbid system-wide Python installs | refuse pip outside a venv | pip `require-virtualenv=true` |
