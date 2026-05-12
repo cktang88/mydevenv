@@ -37,11 +37,13 @@ brew install \
   jq \
   ast-grep
 
-brew install --cask codex
-brew install claude-code
-
 # fzf shell integration (key bindings, completion)
 "$(brew --prefix)"/opt/fzf/install --all --no-update-rc
+
+# Claude Code via Anthropic's native installer (recommended; no Node needed).
+if ! command -v claude >/dev/null 2>&1; then
+  curl -fsSL https://claude.ai/install.sh | bash
+fi
 
 ########################################################
 # oh-my-zsh + plugins

@@ -20,7 +20,8 @@ Installed by `install.sh`:
 
 - **CLI** via brew: `node`, `vim`, `git`, `gh`, `ripgrep`, `zoxide`, `fzf`,
   `tldr`, `jq`, `ast-grep`
-- **AI coding agents**: `claude-code` (brew) + `codex` (brew cask)
+- **AI coding agent**: `claude-code` via Anthropic's native installer
+  (`curl -fsSL https://claude.ai/install.sh | bash`)
 - **JS package managers**: `pnpm@latest` + `yarn@stable` via corepack;
   `bun` via the official curl installer
 - **Python**: `uv` via Astral's standalone installer (supports `uv self update`);
@@ -107,6 +108,8 @@ Not installed by the script:
 - [Arc Browser](https://arc.net/) (Chrome with React DevTools for FE work)
 - [Cursor](https://cursor.sh/) — see [.cursorrules](./.cursorrules)
 - [Warp](https://warp.dev/) terminal
+- [Codex app](https://developers.openai.com/codex/app) — OpenAI's coding agent
+  (download the GUI app rather than the CLI)
 
 macOS keyboard shortcuts
 ---
