@@ -135,3 +135,13 @@ fi
 
 echo
 echo "Done. Open a new terminal (or 'source ~/.zshrc') to pick up changes."
+
+########################################################
+# Optional macOS system hardening (requires sudo).
+########################################################
+
+echo
+read -r -p "Run macOS system hardening now? (requires sudo) [y/N] " reply
+if [[ "$reply" =~ ^[Yy]$ ]]; then
+  sudo "$SCRIPT_DIR/macos-harden.sh"
+fi
