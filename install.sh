@@ -90,56 +90,41 @@ if ! command -v uv >/dev/null 2>&1; then
 fi
 
 ########################################################
-# Supply-chain hardening: 7-day minimum release age across
-# every package manager that supports it natively.
-# See README "Security" section for rationale.
+# Package-manager security hardening.
+# Declarative configs live in ./configs/ and get copied to the
+# canonical global locations. See README "Security" section.
+#
+# Covers (where supported natively):
+#   - 7-day minimum release age across npm/pnpm/yarn/bun/uv/pip
+#   - lifecycle-script blocking (npm, yarn)
+#   - Yarn Berry hardened mode (lockfile poisoning protection)
+#   - pip require-virtualenv
 ########################################################
 
-MIN_AGE_DAYS=7
-MIN_AGE_MINUTES=$((MIN_AGE_DAYS * 24 * 60))   # 10080
-MIN_AGE_SECONDS=$((MIN_AGE_DAYS * 24 * 60 * 60)) # 604800
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-# npm (>= 11.10.0) — days
-if command -v npm >/dev/null 2>&1; then
-  npm config set min-release-age "$MIN_AGE_DAYS" --location=user
-fi
-
-# pnpm (>= 10.16) — minutes
-if command -v pnpm >/dev/null 2>&1; then
-  pnpm config set minimumReleaseAge "$MIN_AGE_MINUTES" --location=user
-fi
-
-# Yarn Berry (>= 4.10) — minutes. Write ~/.yarnrc.yml so the setting
-# is in place once the user runs `yarn set version berry`. Yarn v1
-# (classic) ignores this file; that's fine.
-mkdir -p "$HOME"
-cat > "$HOME/.yarnrc.yml" <<EOF
-npmMinimalAgeGate: $MIN_AGE_MINUTES
-EOF
-
-# Bun (>= 1.3) — seconds, in [install] section of ~/.bunfig.toml
-if [ ! -f "$HOME/.bunfig.toml" ] || ! grep -q '^\[install\]' "$HOME/.bunfig.toml"; then
-  printf '\n[install]\nminimumReleaseAge = %s\n' "$MIN_AGE_SECONDS" >> "$HOME/.bunfig.toml"
-else
-  # replace existing value or append under [install]
-  if grep -q '^minimumReleaseAge' "$HOME/.bunfig.toml"; then
-    sed -i.bak "s/^minimumReleaseAge.*/minimumReleaseAge = $MIN_AGE_SECONDS/" "$HOME/.bunfig.toml" && rm -f "$HOME/.bunfig.toml.bak"
-  else
-    sed -i.bak "/^\[install\]/a\\
-minimumReleaseAge = $MIN_AGE_SECONDS
-" "$HOME/.bunfig.toml" && rm -f "$HOME/.bunfig.toml.bak"
+install_config() {
+  local src="$1" dest="$2"
+  mkdir -p "$(dirname "$dest")"
+  if [ -f "$dest" ] && ! cmp -s "$src" "$dest"; then
+    cp "$dest" "$dest.bak.$(date +%s)"
+    echo "  backed up existing $dest"
   fi
-fi
+  cp "$src" "$dest"
+  echo "  installed $dest"
+}
 
-# uv (>= 0.9.17) — rolling duration string
-mkdir -p "$HOME/.config/uv"
-cat > "$HOME/.config/uv/uv.toml" <<EOF
-exclude-newer = "$MIN_AGE_DAYS days"
-EOF
+echo "Installing package-manager security configs..."
+install_config "$SCRIPT_DIR/configs/npmrc"       "$HOME/.npmrc"
+install_config "$SCRIPT_DIR/configs/yarnrc.yml"  "$HOME/.yarnrc.yml"
+install_config "$SCRIPT_DIR/configs/bunfig.toml" "$HOME/.bunfig.toml"
+install_config "$SCRIPT_DIR/configs/uv.toml"     "$HOME/.config/uv/uv.toml"
+install_config "$SCRIPT_DIR/configs/pip.conf"    "$HOME/.config/pip/pip.conf"
 
-# pip (>= 26.0) — ISO 8601 duration
-if command -v pip3 >/dev/null 2>&1; then
-  pip3 config set --user install.uploaded-prior-to "P${MIN_AGE_DAYS}D"
+# pnpm: writes to a per-OS location (~/Library/Preferences/pnpm/rc on macOS,
+# ~/.config/pnpm/rc on Linux). Use the CLI so pnpm picks the right path.
+if command -v pnpm >/dev/null 2>&1; then
+  pnpm config set minimumReleaseAge 10080 --location=user
 fi
 
 ########################################################

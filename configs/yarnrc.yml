@@ -1,0 +1,14 @@
+# Global Yarn (Berry) config.
+# Installed to ~/.yarnrc.yml by install.sh.
+# Yarn v1 (classic) ignores this file.
+
+# Supply-chain: 7 days, in minutes.
+npmMinimalAgeGate: 10080
+
+# Block lifecycle scripts (default since 4.14; explicit here for clarity).
+# Re-enable per-package via `dependenciesMeta` in package.json.
+enableScripts: false
+
+# Verify lockfile against the registry on every install.
+# Protects against lockfile poisoning. Costs install speed.
+enableHardenedMode: true

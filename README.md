@@ -10,22 +10,35 @@
 Security
 ---
 
-`install.sh` configures a **7-day minimum release age** on every package manager
-that supports it natively. New malicious package versions are usually detected
-and yanked within hours; a 7-day cooldown filters out the smash-and-grab class of
+`install.sh` copies hardened global configs from [`./configs/`](./configs) into
+your home dir. Edit the files in `configs/` and re-run `install.sh` to reapply;
+existing global configs are backed up before overwrite.
+
+**What's enforced**
+
+| Concern | Mechanism | Tools |
+|---|---|---|
+| 7-day min release age (supply-chain cooldown) | refuse install of versions younger than the cutoff | npm, pnpm, yarn, bun, uv, pip |
+| Lifecycle scripts blocked by default | no `postinstall` / `preinstall` code execution | npm (`ignore-scripts`), yarn (`enableScripts: false`), pnpm (default in v10+), bun (default outside trusted list) |
+| Lockfile-poisoning protection | re-resolve lockfile against the registry | yarn `enableHardenedMode: true` |
+| Audit gate | `npm audit` only fails on high/critical | npm `audit-level=high` |
+| Reproducibility | exact-version pinning | npm `save-exact=true`, bun `exact=true` |
+| Forbid system-wide Python installs | refuse pip outside a venv | pip `require-virtualenv=true` |
+
+**Why 7 days:** new malicious package versions are typically detected and yanked
+within hours. A 7-day cooldown filters out the smash-and-grab class of
 supply-chain attacks at near-zero cost.
 
-| Tool    | File                       | Key                   | Unit    | Min version |
-|---------|----------------------------|-----------------------|---------|-------------|
-| npm     | `~/.npmrc`                 | `min-release-age`     | days    | 11.10.0     |
-| pnpm    | user config (`pnpm config set ... --location=user`) | `minimumReleaseAge` | minutes | 10.16       |
-| Yarn    | `~/.yarnrc.yml`            | `npmMinimalAgeGate`   | minutes | Berry 4.10  |
-| Bun     | `~/.bunfig.toml [install]` | `minimumReleaseAge`   | seconds | 1.3         |
-| uv      | `~/.config/uv/uv.toml`     | `exclude-newer`       | duration string (`"7 days"`) | 0.9.17 |
-| pip     | `~/.config/pip/pip.conf`   | `install.uploaded-prior-to` | ISO 8601 (`P7D`) | 26.0 |
+**Why block lifecycle scripts:** `postinstall` runs arbitrary code during
+`npm install`. A compromised transitive dep can pwn your dev machine without you
+even importing it. Re-enable per-project when needed (npm: `--foreground-scripts`
+or `@lavamoat/allow-scripts`; yarn: `dependenciesMeta`; bun: `trustedDependencies`).
 
-To bypass for a single install (use sparingly): pass `--min-release-age=0`,
-`--ignore-minimum-release-age`, `--exclude-newer=now`, etc. — flag names vary by tool.
+**Bypass for one install** (use sparingly): flag names vary —
+`--ignore-scripts=false`, `--min-release-age=0`, `--exclude-newer=now`, etc.
+
+**Required versions:** npm ≥ 11.10.0, pnpm ≥ 10.16, yarn ≥ Berry 4.10, bun ≥ 1.3,
+uv ≥ 0.9.17, pip ≥ 26.0.
 
 Claude Code
 ---

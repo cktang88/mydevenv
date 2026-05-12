@@ -1,0 +1,20 @@
+# Global npm config — also read by pnpm.
+# Installed to ~/.npmrc by install.sh.
+
+# Supply-chain: refuse package versions younger than N days.
+# Filters out the smash-and-grab class of malicious publishes.
+min-release-age=7
+
+# Block lifecycle scripts (postinstall etc.) by default.
+# Re-enable per-project with `npm install --foreground-scripts`
+# or by curating @lavamoat/allow-scripts.
+ignore-scripts=true
+
+# Only fail `npm audit` on high/critical.
+audit-level=high
+
+# Hush the funding banner.
+fund=false
+
+# Pin exact versions instead of caret ranges.
+save-exact=true
