@@ -18,10 +18,11 @@ package-manager configs. Existing files are backed up before overwrite.
 
 Installed by `install.sh`:
 
-- **CLI** via brew: `node`, `vim`, `git`, `gh`, `ripgrep`, `fd`, `bat`,
-  `git-delta`, `zoxide`, `fzf`, `tldr`, `jq`, `ast-grep`
+- **CLI** via brew: `node`, `vim`, `git`, `gh`, `ripgrep`, `zoxide`, `fzf`,
+  `tldr`, `jq`, `ast-grep`
+- **AI coding agents**: `claude-code` (brew) + `codex` (brew cask)
 - **JS package managers**: `pnpm@latest` + `yarn@stable` via corepack;
-  `bun` via the official installer
+  `bun` via the official curl installer
 - **Python**: `uv` via Astral's standalone installer (supports `uv self update`);
   `pip` bumped to ≥ 26.0
 - **Shell**: oh-my-zsh + `zsh-autosuggestions` + `zsh-syntax-highlighting`

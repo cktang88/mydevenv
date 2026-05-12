@@ -31,14 +31,14 @@ brew install \
   git \
   gh \
   ripgrep \
-  fd \
-  bat \
-  git-delta \
   zoxide \
   fzf \
   tldr \
   jq \
   ast-grep
+
+brew install --cask codex
+brew install claude-code
 
 # fzf shell integration (key bindings, completion)
 "$(brew --prefix)"/opt/fzf/install --all --no-update-rc

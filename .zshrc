@@ -78,35 +78,15 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-alias fd="fdfind"
-
 # Route pip through uv so the global 7-day exclude-newer gate applies.
 # Note: outside a venv, `uv pip install` requires --system. Use venvs:
 #   uv venv && source .venv/bin/activate
 alias pip="uv pip"
 alias pipx="uv tool"
 
-
-# Options to fzf command
+# fzf
 export FZF_COMPLETION_OPTS='+c -x'
 export FZF_COMPLETION_TRIGGER='**'
-export FZF_DEFAULT_COMMAND='fdfind --type f --hidden'
-
-# Use fd (https://github.com/sharkdp/fd) instead of the default find
-# command for listing path candidates.
-# - The first argument to the function ($1) is the base path to start traversal
-# - See the source code (completion.{bash,zsh}) for the details.
-_fzf_compgen_path() {
-  fd --hidden --follow --exclude ".git" . "$1"
-}
-
-# Use fd to generate the list for directory completion
-_fzf_compgen_dir() {
-  fd --type d --hidden --follow --exclude ".git" . "$1"
-}
-
-# add preview alias for fzf
-alias fzfp="fzf --preview 'bat --style=numbers --color=always {} | head -500'"
 
 # zoxide enabling
 eval "$(zoxide init zsh)"
