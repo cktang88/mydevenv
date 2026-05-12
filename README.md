@@ -3,8 +3,29 @@
 # TOOLING
 
 - oxlint/oxfmt instead of eslint
-- uv for python dep management
+- uv for python dep management (installed via Astral's standalone installer; supports `uv self update`)
+- `pip` and `pipx` are aliased to `uv pip` / `uv tool` in `.zshrc`
 - use [ast-grep](https://ast-grep.github.io/) (`sg`) instead of grep --> tell cursor/claude code to use this too...
+
+Security
+---
+
+`install.sh` configures a **7-day minimum release age** on every package manager
+that supports it natively. New malicious package versions are usually detected
+and yanked within hours; a 7-day cooldown filters out the smash-and-grab class of
+supply-chain attacks at near-zero cost.
+
+| Tool    | File                       | Key                   | Unit    | Min version |
+|---------|----------------------------|-----------------------|---------|-------------|
+| npm     | `~/.npmrc`                 | `min-release-age`     | days    | 11.10.0     |
+| pnpm    | user config (`pnpm config set ... --location=user`) | `minimumReleaseAge` | minutes | 10.16       |
+| Yarn    | `~/.yarnrc.yml`            | `npmMinimalAgeGate`   | minutes | Berry 4.10  |
+| Bun     | `~/.bunfig.toml [install]` | `minimumReleaseAge`   | seconds | 1.3         |
+| uv      | `~/.config/uv/uv.toml`     | `exclude-newer`       | duration string (`"7 days"`) | 0.9.17 |
+| pip     | `~/.config/pip/pip.conf`   | `install.uploaded-prior-to` | ISO 8601 (`P7D`) | 26.0 |
+
+To bypass for a single install (use sparingly): pass `--min-release-age=0`,
+`--ignore-minimum-release-age`, `--exclude-newer=now`, etc. — flag names vary by tool.
 
 Claude Code
 ---

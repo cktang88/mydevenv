@@ -80,6 +80,12 @@ source $ZSH/oh-my-zsh.sh
 
 alias fd="fdfind"
 
+# Route pip through uv so the global 7-day exclude-newer gate applies.
+# Note: outside a venv, `uv pip install` requires --system. Use venvs:
+#   uv venv && source .venv/bin/activate
+alias pip="uv pip"
+alias pipx="uv tool"
+
 
 # Options to fzf command
 export FZF_COMPLETION_OPTS='+c -x'
