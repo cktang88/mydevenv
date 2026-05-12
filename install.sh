@@ -68,6 +68,10 @@ if ! grep -q "# mydevenv" "$HOME/.gitconfig" 2>/dev/null; then
   cat "$SCRIPT_DIR/.gitconfig" >> "$HOME/.gitconfig"
 fi
 
+# Restrict shell-history file to owner only. History often contains tokens,
+# internal hostnames, and command-line credentials.
+[ -f "$HOME/.zsh_history" ] && chmod 600 "$HOME/.zsh_history"
+
 ########################################################
 # JS package managers: pnpm + yarn via corepack (ships with Node),
 # bun via official installer.

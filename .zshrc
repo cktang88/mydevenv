@@ -78,6 +78,23 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+# --- Security hardening ---
+
+# Homebrew: kill telemetry, refuse insecure redirects on downloads, require
+# casks to declare a SHA (no_check casks will warn).
+export HOMEBREW_NO_ANALYTICS=1
+export HOMEBREW_NO_INSECURE_REDIRECT=1
+export HOMEBREW_CASK_OPTS="--require-sha"
+export HOMEBREW_NO_ENV_HINTS=1
+
+# Shell history: keep secrets out by prefixing the command with a space,
+# and drop duplicate/blank entries.
+setopt HIST_IGNORE_SPACE
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_REDUCE_BLANKS
+
+# --- end security hardening ---
+
 # Route pip through uv so the global 7-day exclude-newer gate applies.
 # Note: outside a venv, `uv pip install` requires --system. Use venvs:
 #   uv venv && source .venv/bin/activate

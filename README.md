@@ -70,6 +70,25 @@ or `@lavamoat/allow-scripts`; yarn: `dependenciesMeta`; bun: `trustedDependencie
 **Required versions:** npm ≥ 11.10.0, pnpm ≥ 10.16, yarn ≥ Berry 4.10, bun ≥ 1.3,
 uv ≥ 0.9.17, pip ≥ 26.0.
 
+**Shell + Homebrew hardening** (already applied by `.zshrc` from `install.sh`):
+
+- `HOMEBREW_NO_ANALYTICS=1` — kill telemetry
+- `HOMEBREW_NO_INSECURE_REDIRECT=1` — refuse insecure HTTP redirects during downloads
+- `HOMEBREW_CASK_OPTS=--require-sha` — warn on casks with `sha256 :no_check`
+- `setopt HIST_IGNORE_SPACE` — prefix a command with a space to keep it out of shell history (handy for `MY_TOKEN=… cmd`)
+- `chmod 600 ~/.zsh_history` — history file readable only by you
+
+**Optional macOS system hardening:**
+
+```bash
+sudo ./macos-harden.sh
+```
+
+Turns on the firewall + stealth mode, requires password immediately on
+sleep/screensaver, disables Power Nap, and tightens a few Finder defaults.
+Idempotent; reversible via the same commands with opposite values.
+Review the file before running on a machine you didn't set up.
+
 Claude Code
 ---
 - see [.claude](./.claude) for user memory
