@@ -81,12 +81,36 @@ cargo install ripgrep --locked
 # httpie: improved 'curl', https://github.com/jakubroztocil/httpie/
 
 ########################################################
-# Python tooling: uv (replaces pip/pyenv/poetry/pipx)
-# Installed via Astral's standalone installer so `uv self update` works.
+# JS package managers: pnpm + yarn via corepack (ships with Node),
+# bun via official installer.
+# We want these on $PATH because the security configs target them.
+########################################################
+
+if command -v corepack >/dev/null 2>&1; then
+  corepack enable
+  corepack prepare pnpm@latest --activate
+  corepack prepare yarn@stable --activate
+fi
+
+if ! command -v bun >/dev/null 2>&1; then
+  curl -fsSL https://bun.sh/install | bash
+fi
+
+########################################################
+# Python tooling.
+#  - uv via Astral's standalone installer (supports `uv self update`).
+#  - pip bumped to >= 26.0 so its `uploaded-prior-to` setting works.
+#    On Homebrew Python this requires --break-system-packages; brew
+#    may revert pip on `brew upgrade python`, in which case re-run.
 ########################################################
 
 if ! command -v uv >/dev/null 2>&1; then
   curl -LsSf https://astral.sh/uv/install.sh | sh
+fi
+
+if command -v python3 >/dev/null 2>&1; then
+  python3 -m pip install --upgrade pip --break-system-packages || \
+    python3 -m pip install --upgrade pip
 fi
 
 ########################################################
