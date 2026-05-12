@@ -1,11 +1,37 @@
-# My dev env (MacOS only)
+# My dev env
+
+**macOS only.** The installer assumes Homebrew (and installs it if missing) and
+uses macOS conventions throughout. Linux users: fork it and swap brew for apt.
+
+Quick start:
+
+```bash
+git clone git@github.com:cktang88/mydevenv.git
+cd mydevenv
+./install.sh         # NO sudo — brew refuses sudo, everything is user-scoped
+```
+
+Re-run `install.sh` any time after editing `configs/*` to reapply the global
+package-manager configs. Existing files are backed up before overwrite.
 
 # TOOLING
 
-- oxlint/oxfmt instead of eslint
-- uv for python dep management (installed via Astral's standalone installer; supports `uv self update`)
+Installed by `install.sh`:
+
+- **CLI** via brew: `node`, `vim`, `git`, `gh`, `ripgrep`, `fd`, `bat`,
+  `git-delta`, `zoxide`, `fzf`, `tldr`, `jq`, `ast-grep`
+- **JS package managers**: `pnpm@latest` + `yarn@stable` via corepack;
+  `bun` via the official installer
+- **Python**: `uv` via Astral's standalone installer (supports `uv self update`);
+  `pip` bumped to ≥ 26.0
+- **Shell**: oh-my-zsh + `zsh-autosuggestions` + `zsh-syntax-highlighting`
+
+Notes:
+
+- Use [ast-grep](https://ast-grep.github.io/) (`sg`) instead of grep — tell
+  Cursor / Claude Code to use it too
 - `pip` and `pipx` are aliased to `uv pip` / `uv tool` in `.zshrc`
-- use [ast-grep](https://ast-grep.github.io/) (`sg`) instead of grep --> tell cursor/claude code to use this too...
+- oxlint/oxfmt are preferred over eslint (not installed globally — per-project)
 
 Security
 ---
@@ -50,70 +76,42 @@ Claude Code
 
 
 
-Setup
+macOS apps (manual)
 ---
 
-[Mos](https://mos.caldis.me/) to fix 3rd party mouse scroll (speed + smooth anim)
+Not installed by the script:
 
-```bash
-git clone git@github.com:cktang88/mydevenv.git
-cd mydevenv
-chmod a+x ./install.sh
-sudo ./install.sh
-source ./install.sh #(can't simply execute script)
-source ~/.cargo/env # update PATH for rust tooling
-```
+- [Mos](https://mos.caldis.me/) — 3rd-party mouse scroll fix (smooth + speed)
+- [Karbiner-Elements](https://karabiner-elements.pqrs.org/) — for the
+  `` ` `` ↔ caps-lock swap
+- [Arc Browser](https://arc.net/) (Chrome with React DevTools for FE work)
+- [Cursor](https://cursor.sh/) — see [.cursorrules](./.cursorrules)
+- [Warp](https://warp.dev/) terminal
 
-Useful things
+macOS keyboard shortcuts
 ---
-- **swap [`] and [caps lock] keys** w Karabiner
-- use **Arc Browser** :)
-  - Chrome w/ React dev tools just for FE dev
-- Cursor (replaces VSCode) - see [.cursorrules](https://github.com/cktang88/mydevenv/blob/master/.cursorrules)
-- Warp (terminal)
-- Everywhere: 
+
 ```
-cmd+up/down --> scroll to top/bottom of page
-cmd+x, cmd+v, cmd+c --> works on a whole line regardless of cursor position on a line if nothing selected
-cmd + left/right --> move cursor to beginning/end of line
-pg-up/pg-down = REALLY fast up/down scroll
-    - [fn+up]/[fn+down] for mac
-cmd+backspace = backspaces entire word/line depending on app (eg. MS Word backspaces entire word).
-
-ctrl+left/right/up/down --> switch desktop, show all windows(up), show all windows of application(down)
+cmd + up/down            scroll to top/bottom of page
+cmd + left/right         move cursor to beginning/end of line
+cmd + x/v/c              works on the whole line if nothing is selected
+cmd + backspace          delete entire word/line (varies by app)
+fn  + up/down            page-up/page-down (very fast scroll)
+ctrl + left/right        switch desktop
+ctrl + up                show all windows
+ctrl + down              show all windows of the current app
+ctrl + `                 switch between windows of the SAME app
+ctrl + tab               switch between apps
 ```
-- ctrl + ` = switch between windows of the SAME app
-- ctrl + tab = switch between windows of all apps
 
-Warp (replaces Iterm)
-
-VSCode/Cursor extensions
+VSCode / Cursor extensions
 ---
-- Git lens (shows git blame + has context menu option to copy remote URL)
-- [jock.svg](https://marketplace.visualstudio.com/items?itemName=jock.svg) to preview SVGs
-- open in Github: [sysoev.vscode-open-in-github](https://marketplace.visualstudio.com/items?itemName=sysoev.vscode-open-in-github)
-- eslint (though ideally should use oxlint?)
+
+- Git Lens — git blame + "copy remote URL" context menu
+- [jock.svg](https://marketplace.visualstudio.com/items?itemName=jock.svg) — preview SVGs
+- [sysoev.vscode-open-in-github](https://marketplace.visualstudio.com/items?itemName=sysoev.vscode-open-in-github)
 - Material Icon Theme
 - [Rainbow CSV](https://marketplace.visualstudio.com/items?itemName=mechatroner.rainbow-csv)
 - Night Owl (syntax highlighting)
 
-+ any lang specific mods
-
-⚠️ NOTE: Set Changed Files view to TREE
-
-eg. ![image](https://github.com/user-attachments/assets/51a7b596-6da2-4df6-8f46-ee3005fbd06d)
-
-
-
-Zsh + mods
----
-:fire: :fire: :fire: Run `install.sh`
-
-How to install extensions - https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh
-
-- [zsh-users/zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh)
-- [zsh-users/zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh)
-- [colored-man-pages](https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/colored-man-pages/colored-man-pages.plugin.zsh)
-- [fzf extension](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/fzf) -- auto installed w/ `fzf`
-- zoxide - https://github.com/ajeetdsouza/zoxide
-- delta - good git diff https://github.com/dandavison/delta
+⚠️ Set "Changed Files" view to **tree**.
