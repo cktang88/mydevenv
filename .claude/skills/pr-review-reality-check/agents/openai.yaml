@@ -1,0 +1,4 @@
+interface:
+  display_name: "PR Review Reality Check"
+  short_description: "Triage PR review comments with evidence"
+  default_prompt: "Use $pr-review-reality-check to evaluate the Codex review comments on this PR and recommend only fixes worth the added complexity."
