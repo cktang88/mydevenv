@@ -1,0 +1,1 @@
+From a new subagent with empty context, write and run a tmp e2e script that fully exercises this PR/worktree using my local environment and local db on real data. Do not use stubs/factories unless absolutely necessary.
