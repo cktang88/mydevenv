@@ -1,0 +1,1 @@
+Go through all the PR's reviews, be sure to take a step back and see overarching pattern of where reviews keep pointing at and see if there is a higher level or simpler fix that can fix them cleanly rather than just patching, THINK!
