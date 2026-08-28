@@ -94,6 +94,7 @@ Claude Code
 ---
 - see [.claude](./.claude) for user memory
 - `/loop 30m correct any ci errors for all my open prs` - scheduled task https://code.claude.com/docs/en/scheduled-tasks
+- use `claude-history` for history
 
 
 
@@ -110,6 +111,12 @@ Not installed by the script:
 - [Warp](https://warp.dev/) terminal
 - [Codex app](https://developers.openai.com/codex/app) — OpenAI's coding agent
   (download the GUI app rather than the CLI)
+
+
+Chrome/Arc extensions
+---
+- [auto group tabs by domain](https://chromewebstore.google.com/detail/tab-groups-extension/nplimhmoanghlebhdiboeellhgmgommi)
+- use vertical chrome tabs settings
 
 macOS keyboard shortcuts
 ---
