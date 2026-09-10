@@ -11,7 +11,7 @@ real local application and database. Assert expected outputs, artifacts, and
 mutations across the happy path, relevant failures, and affected interactions.
 Avoid stubs and factories unless necessary; explain any coverage they replace.
 
-Have another subagent review the script's coverage against the change, then run
+Have a second adversarial subagent review the script's coverage against the change, then run
 it. For a bug fix, show that the same check fails for the expected reason before
 the fix and passes afterward, using equivalent starting data. For other changes,
 verify the intended behavior without forcing an artificial failing baseline.

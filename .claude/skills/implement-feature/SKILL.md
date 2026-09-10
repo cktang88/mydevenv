@@ -23,7 +23,7 @@ Leave unrelated bugs, optimizations, and extra behavior for follow-up unless the
 requested feature cannot work without them. Report those findings in the summary.
 
 Once implemented, use [review-architecture](../review-architecture/SKILL.md) and
-apply worthwhile improvements. Have fresh subagents look for bugs and edge cases;
+apply worthwhile improvements. Have fresh adversarial subagents look for bugs and edge cases;
 fix supported findings whose likelihood and impact justify the change. Run checks
 appropriate to the feature and affected interactions.
 

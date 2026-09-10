@@ -9,7 +9,7 @@ Investigate using Datadog logs and traces, targeted read-only production databas
 queries, and local reproduction where useful. Build an explanation that connects
 the observed failure to its cause in the code and data.
 
-Have independent subagents try to disprove the explanation, find contradictory
+Have independent adversarial subagents try to disprove the explanation, find contradictory
 evidence, or identify alternative causes. Follow the evidence and make any
 remaining uncertainty clear.
 
