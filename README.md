@@ -111,8 +111,11 @@ task when the target is clear and asks when it is ambiguous.
 | `debug` | `debug-and-fix` | Verified production root cause, tested fix in a new worktree, and a PR |
 | `e2e-subagent` | `verify-e2e` | Independent local runtime checks, before/after evidence, and an uncommitted script |
 | `merge-master` | `sync-base` | Base branch merged into the working branch, with upstream interactions checked |
-| `reviews-pattern` | `address-reviews` | Identify overarching review patterns and structural root causes, then implement and test the simplest coherent fix |
+| `reviews-pattern` | `address-reviews` | Find shared root causes, check which fixes are warranted, and implement minimal changes |
 | New | `implement-feature` | Compare approaches, maximize reuse, and deliver a minimal feature implementation through reviews, a PR, and E2E verification |
+
+`pr-review-reality-check` is now included in `address-reviews`. Use `address-reviews`
+for both review fixes and analysis-only triage of feedback.
 
 The source files live in [`.claude/skills`](./.claude/skills).
 [`.agents/skills`](./.agents/skills) contains relative symlinks to the same
