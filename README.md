@@ -111,7 +111,7 @@ task when the target is clear and asks when it is ambiguous.
 | `debug` | `debug-and-fix` | Verified production root cause, tested fix in a new worktree, and a PR |
 | `e2e-subagent` | `verify-e2e` | Independent local runtime checks, before/after evidence, and an uncommitted script |
 | `merge-master` | `sync-base` | Base branch merged into the working branch, with upstream interactions checked |
-| `reviews-pattern` | `synthesize-review` | Shared causes across review comments and an ordered fix plan; leaves code unchanged |
+| `reviews-pattern` | `address-reviews` | Address or fix PR reviews with minimal tested changes, checking for shared root causes along the way |
 
 The source files live in [`.claude/skills`](./.claude/skills).
 [`.agents/skills`](./.agents/skills) contains relative symlinks to the same five
