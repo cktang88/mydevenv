@@ -14,7 +14,7 @@ most of the complexity? Would a different structure make the problem easier?
 Use a greenfield design to explore alternatives, while accounting for the cost
 of changing the existing implementation.
 
-Use independent subagents to challenge the approach and assumptions with
+Use independent adversarial subagents to challenge the approach and assumptions with
 concrete evidence. Keeping the current design is a valid conclusion.
 
 Give a short, plain-language report with code references, useful recommendations,
