@@ -1,13 +1,14 @@
 ---
 name: address-reviews
-description: Address PR reviews or fix PR review comments by checking the concerns, finding shared root causes, and implementing the smallest coherent fixes. Use whenever asked to address or fix PR reviews, even without a separate request for simplification or pattern analysis.
+description: Address PR reviews or fix PR review comments by first identifying overarching patterns, structural root causes, and simpler approaches, then implementing coherent fixes. Use whenever asked to address or fix PR reviews, even without a separate request for simplification or pattern analysis.
 ---
 
 # Address Reviews
 
-Resolve valid PR feedback with minimal, tested changes. Look for shared root
-causes as part of addressing reviews, even when the user has not asked for a
-higher-level simplification.
+Step back and understand what the reviews collectively reveal about the design.
+The primary task is to recognize the underlying structure and root causes, then
+find a higher-level or simpler fix that addresses the concerns cleanly. Do this
+before editing code, even when the user only asks to fix review comments.
 
 ## Target
 
@@ -15,33 +16,45 @@ Use the supplied PR or the current branch's PR when unambiguous. Ask if the PR
 cannot be identified. Read all available reviews and discussion, including
 resolved or outdated threads, and compare their claims with the current diff.
 
-## Address the feedback
+## Understand the pattern before fixing
 
-1. Check whether each concern still identifies a real problem. Distinguish
-   current issues from already fixed concerns, unsupported claims, and problems
-   that predate this PR. Use existing review triage if available, verifying it
-   against the current code.
-2. Group supported concerns by shared cause, such as a missing boundary check,
-   duplicated policy, or misplaced responsibility. Explain the causal connection;
-   comments about the same file do not necessarily share a cause.
-3. Look for existing code that already owns the relevant decision. Compare a
-   shared fix with small local fixes and choose the least complex option
-   that preserves required behavior. Keep unrelated issues separate.
-4. Implement the supported fixes in the PR's branch or worktree. Proceed with
-   the requested fixes without stopping at a plan. Ask only when a missing
-   requirement or unresolved tradeoff prevents choosing the correct behavior.
-5. Run checks appropriate to the changes, including focused regression coverage
-   for changed behavior and affected interactions. Map each fix to the comments
-   it addresses. Explain concerns left unchanged or needing follow-up.
+1. Read the reviews as a whole alongside the PR's intent and related code.
+   Identify where concerns keep pointing: repeated assumptions, special cases,
+   unclear ownership, or interactions that are hard to reason about. Summarize
+   the overarching patterns before turning comments into individual work items.
+2. Trace each pattern to the underlying structure. Follow data flow and decision
+   ownership to explain why these symptoms recur. Identify the shared cause,
+   such as a rule enforced in the wrong place or an unnecessary state distinction.
+   Comments about the same file alone do not establish a shared cause.
+3. Test that diagnosis against the current code and review evidence. Distinguish
+   real concerns from already fixed or unsupported claims, and identify problems
+   that predate this PR. Reuse existing triage when available. Revise the proposed
+   pattern if the evidence does not support it.
+4. Ask whether a higher-level change would remove the cause and simplify the
+   implementation: move a decision to its owner, reuse an existing abstraction,
+   or remove unnecessary branching. Compare that approach with local fixes,
+   including its cost and effect on required behavior. Prefer the simplest
+   coherent solution; keep unrelated concerns separate instead of forcing them
+   into a new abstraction.
+5. Briefly explain the root cause, chosen approach, and which comments it
+   addresses, with code evidence. Then implement the requested fixes in the PR's
+   branch or worktree. Continue through implementation without stopping for plan
+   approval; ask only when missing requirements prevent choosing correct behavior.
+6. Validate that the chosen change removes the underlying problem and preserves
+   required behavior. Run appropriate checks, including focused regression
+   coverage for affected interactions. Map the results to the review concerns
+   and explain anything left unchanged or needing follow-up.
 
 For example, several callers repeating the same validation may suggest moving
 that validation to their shared boundary, if the rule belongs there.
 
 ## Finish
 
-Summarize the changes, supporting comment links and exact code references, and
-validation results. Explain which comments are addressed and which remain open.
-If there is no shared cause, resolve the supported concerns individually.
+Lead with the overarching pattern, structural root cause, and why the chosen
+approach is simpler. Then summarize changes, supporting comment links and exact
+code references, and validation results. Explain which comments are addressed
+and which remain open. If no shared cause is supported, explain why local fixes
+are appropriate.
 
 When the request includes updating the PR, commit and push the fixes to its
 existing branch. Post replies or resolve review threads only when explicitly
