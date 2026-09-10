@@ -1,44 +1,23 @@
 ---
 name: verify-e2e
-description: Independently verify a PR or worktree against the local application and real local data using a temporary end-to-end script. Use when asked for runtime proof of changed behavior, including outputs, side effects, and before/after evidence.
+description: Verify a PR or worktree with an independent temporary end-to-end script using the local application and real local data. Use when asked for runtime verification of a change.
 ---
 
 # Verify End to End
 
-Demonstrate that the change delivers its expected behavior in the local
-environment, including its interactions with existing code.
+Have a subagent with fresh context write a temporary end-to-end script for the
+PR or worktree. Give it the requirements and local setup details, and use the
+real local application and database. Assert expected outputs, artifacts, and
+mutations across the happy path, relevant failures, and affected interactions.
+Avoid stubs and factories unless necessary; explain any coverage they replace.
 
-## Target
+Have another subagent review the script's coverage against the change, then run
+it. For a bug fix, show that the same check fails for the expected reason before
+the fix and passes afterward, using equivalent starting data. For other changes,
+verify the intended behavior without forcing an artificial failing baseline.
 
-Use the supplied PR or worktree, or the current branch when unambiguous.
-Establish the expected behavior, comparison revision, and local application and
-database before testing. Ask if the target or environment is unclear.
+Keep test effects local and restore affected data or use an isolated local copy.
+Leave the temporary script uncommitted.
 
-## Verify
-
-1. Start a subagent without inherited conversation history. Give it the target,
-   requirements, repository instructions, and local setup details so it can read
-   the code and write a temporary end-to-end script independently.
-2. Exercise the real local application and local database with real local data.
-   Assert expected outputs, generated artifacts, and state changes. Include the
-   happy path, relevant failure paths, and interactions affected by the diff.
-   Avoid stubs and factories unless necessary; explain any substitution and the
-   coverage it prevents. Keep all test mutations in the local environment and
-   restore affected data or use an isolated local copy for repeatable runs.
-3. Have another subagent review and update the script against the requirements
-   and diff, looking for missing assertions and important uncovered behavior.
-4. Run the same script and assertions before and after the change with equivalent
-   starting data. For a fix, show that the regression check fails for the expected
-   reason before the fix and passes afterward. Setup or connection failures do
-   not count. If the change preserves behavior, verify both revisions and explain
-   why a failing baseline is not expected.
-
-If a comparison, environment, or independent review is unavailable, report the
-missing evidence and complete the checks that remain possible. Do not report
-full verification when a required check was skipped.
-
-## Finish
-
-Report scenarios, assertions, before/after results, artifact locations, local
-data cleanup, and remaining gaps. Include the script path and rerun command.
-Keep the temporary script uncommitted; this skill does not fix application code.
+Report results and gaps, including any missing independent checks. Include the
+script path, rerun command, and relevant artifacts.
