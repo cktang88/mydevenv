@@ -1,6 +1,6 @@
 ---
 name: address-reviews
-description: Address or fix PR reviews by finding overarching patterns and structural root causes, then implementing the simplest coherent fix. Applies to ordinary review-fixing requests without a separate request for simplification.
+description: Address, fix, or evaluate PR reviews by finding shared root causes, checking realistic impact and whether the PR caused the issue, and choosing fixes worth their complexity. Applies to ordinary review requests, including noisy AI feedback.
 ---
 
 # Address Reviews
@@ -9,16 +9,20 @@ Read the reviews together with the PR and related code. Before editing, step
 back: what do the concerns collectively reveal about the underlying structure?
 Is there a higher-level or simpler fix that resolves several concerns cleanly?
 
-Trace recurring symptoms to their cause. Look for misplaced decisions, repeated
-rules, or assumptions that make the implementation harder than it needs to be.
-Ground the diagnosis in current code and evidence; review comments can be wrong
-or already addressed.
+Trace recurring symptoms to their cause: misplaced decisions, repeated rules,
+or assumptions that make the implementation harder than it needs to be.
 
-Compare a structural simplification with local fixes, using existing abstractions
-where they fit. Preserve required behavior and keep unrelated concerns separate.
-For example, repeated validation in callers may belong at their shared boundary.
+Check claims against real callers, data, and existing guards. Compare with the
+base branch to distinguish problems introduced or worsened by this PR from
+pre-existing behavior. Weigh realistic likelihood and impact, including serious
+rare failures; a reviewer or AI assertion alone is not evidence.
 
-Implement the simplest supported approach and run checks appropriate to the
-change. Briefly explain the root cause, why the approach helps, which comments
-are addressed, and remaining gaps, with concrete references. Complete any
-requested PR updates; for an analysis-only request, return recommendations.
+Compare structural simplification with local fixes, reusing existing abstractions
+where they fit. Preserve required behavior and weigh the benefit against added
+complexity. Leaving code unchanged is valid for handled or speculative concerns,
+or when the fix costs more than it helps. Keep unrelated existing issues as follow-ups.
+
+Implement the simplest worthwhile fixes and run appropriate checks. Briefly
+explain the root causes, changes, concerns left unchanged or deferred, and any
+remaining gaps, with concrete code or runtime evidence. Complete requested PR
+updates; for an analysis-only request, return recommendations.
