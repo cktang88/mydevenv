@@ -96,6 +96,46 @@ Claude Code
 - `/loop 30m correct any ci errors for all my open prs` - scheduled task https://code.claude.com/docs/en/scheduled-tasks
 - use `claude-history` for history
 
+Workflow skills
+---
+
+These skills can be selected automatically when they match your request,
+and you can also invoke them manually. Invoke them as
+`/review-architecture` in Claude Code or `$review-architecture` in Codex,
+followed by a PR URL, branch, or issue description. Each skill uses the current
+task when the target is clear and asks when it is ambiguous.
+
+| Previous command | Skill | Result |
+|---|---|---|
+| `analyze-arch` | `review-architecture` | Architecture recommendations with code evidence; leaves code unchanged |
+| `debug` | `debug-and-fix` | Verified production root cause, tested fix in a new worktree, and a PR |
+| `e2e-subagent` | `verify-e2e` | Independent local runtime checks, before/after evidence, and an uncommitted script |
+| `merge-master` | `sync-base` | Base branch merged into the working branch, with upstream interactions checked |
+| `reviews-pattern` | `address-reviews` | Identify overarching review patterns and structural root causes, then implement and test the simplest coherent fix |
+| New | `implement-feature` | Compare approaches, maximize reuse, and deliver a minimal feature implementation through reviews, a PR, and E2E verification |
+
+The source files live in [`.claude/skills`](./.claude/skills).
+[`.agents/skills`](./.agents/skills) contains relative symlinks to the same
+skills for Codex, so edits apply to both tools. Codex automatic invocation is
+enabled with `policy.allow_implicit_invocation: true` in `agents/openai.yaml`.
+Claude Code uses its defaults, which allow both automatic and manual invocation.
+The old command files are replaced by these skills.
+
+For personal use in other repositories, link each desired skill directory from
+this checkout into `~/.claude/skills/` and `~/.agents/skills/`. For example, run
+from the checkout root:
+
+```bash
+mkdir -p ~/.claude/skills ~/.agents/skills
+ln -s "$PWD/.claude/skills/review-architecture" ~/.claude/skills/review-architecture
+ln -s "$PWD/.claude/skills/review-architecture" ~/.agents/skills/review-architecture
+```
+
+Use the new skill names in saved prompts and remove any separately installed
+copies of the old commands when migrating. `install.sh` does not install these
+skills. See the [Claude Code skill documentation](https://code.claude.com/docs/en/skills)
+and [Codex skill documentation](https://learn.chatgpt.com/docs/build-skills).
+
 
 
 macOS apps (manual)
