@@ -1,7 +1,6 @@
 ---
 name: synthesize-review
-description: Find shared root causes across a PR's review comments and recommend the smallest coherent fixes. Use when explicitly asked to identify recurring review patterns or a higher-level simplification. Produces a plan without editing code or posting replies.
-disable-model-invocation: true
+description: Find shared root causes across a PR's review comments and recommend the smallest coherent fixes. Use when asked to identify recurring review patterns or a higher-level simplification. Produces a plan without editing code or posting replies.
 ---
 
 # Synthesize Review

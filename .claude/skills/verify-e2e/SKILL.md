@@ -1,7 +1,6 @@
 ---
 name: verify-e2e
-description: Independently verify a PR or worktree against the local application and real local data using a temporary end-to-end script. Use when explicitly asked for runtime proof of changed behavior, including outputs, side effects, and before/after evidence.
-disable-model-invocation: true
+description: Independently verify a PR or worktree against the local application and real local data using a temporary end-to-end script. Use when asked for runtime proof of changed behavior, including outputs, side effects, and before/after evidence.
 ---
 
 # Verify End to End

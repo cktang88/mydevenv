@@ -1,7 +1,6 @@
 ---
 name: debug-and-fix
-description: Investigate a production issue using Datadog, database evidence, and local reproduction, then verify the cause, implement a minimal fix in a new worktree, and open a PR. Use when explicitly asked for the full investigation-to-PR workflow.
-disable-model-invocation: true
+description: Investigate a production issue using Datadog, database evidence, and local reproduction, then verify the cause, implement a minimal fix in a new worktree, and open a PR. Use when asked for the full investigation-to-PR workflow.
 ---
 
 # Debug and Fix

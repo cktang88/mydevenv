@@ -1,7 +1,6 @@
 ---
 name: sync-base
-description: Merge the latest base branch into a PR or worktree and adapt to upstream changes, including behavior changes without merge conflicts. Use when explicitly asked to bring a branch up to date while preserving its intended functionality.
-disable-model-invocation: true
+description: Merge the latest base branch into a PR or worktree and adapt to upstream changes, including behavior changes without merge conflicts. Use when asked to bring a branch up to date while preserving its intended functionality.
 ---
 
 # Sync Base

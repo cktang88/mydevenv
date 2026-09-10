@@ -96,10 +96,11 @@ Claude Code
 - `/loop 30m correct any ci errors for all my open prs` - scheduled task https://code.claude.com/docs/en/scheduled-tasks
 - use `claude-history` for history
 
-Explicit workflow skills
+Workflow skills
 ---
 
-These five skills run when you select them explicitly. Invoke them as
+These five skills can be selected automatically when they match your request,
+and you can also invoke them manually. Invoke them as
 `/review-architecture` in Claude Code or `$review-architecture` in Codex,
 followed by a PR URL, branch, or issue description. Each skill uses the current
 task when the target is clear and asks when it is ambiguous.
@@ -114,9 +115,9 @@ task when the target is clear and asks when it is ambiguous.
 
 The source files live in [`.claude/skills`](./.claude/skills).
 [`.agents/skills`](./.agents/skills) contains relative symlinks to the same five
-skills for Codex, so edits apply to both tools. Explicit invocation is configured
-with `disable-model-invocation: true` for Claude Code and
-`policy.allow_implicit_invocation: false` in `agents/openai.yaml` for Codex.
+skills for Codex, so edits apply to both tools. Codex automatic invocation is
+enabled with `policy.allow_implicit_invocation: true` in `agents/openai.yaml`.
+Claude Code uses its defaults, which allow both automatic and manual invocation.
 The old command files are replaced by these skills.
 
 For personal use in other repositories, link each desired skill directory from

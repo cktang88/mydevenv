@@ -1,7 +1,6 @@
 ---
 name: review-architecture
-description: Review a PR or PR stack for simpler architecture, unnecessary complexity, and unsupported assumptions. Use when explicitly asked to assess the overall approach. Produces recommendations without editing code.
-disable-model-invocation: true
+description: Review a PR or PR stack for simpler architecture, unnecessary complexity, and unsupported assumptions. Use when asked to assess the overall approach. Produces recommendations without editing code.
 ---
 
 # Review Architecture
