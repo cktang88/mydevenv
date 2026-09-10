@@ -12,6 +12,7 @@
 * Use the highest-intelligence models for planning, delegating to subagents, reviewing subagent output, and other heavy-thinking tasks.
 * Use cheaper subagents for tasks requiring less reasoning, such as exploring code, and for context-intensive or tangential work that could pollute the main context window.
 * Dynamically choose the subagent model based on the difficulty of the task.
+* Always run any automated tests and pre-commit etc in subagents so that it doesn't block the main thread. Main agent should continue work as if those are assumed to pass.
 
 ## Code and Architecture Organization
 
