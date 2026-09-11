@@ -9,6 +9,11 @@ First record a short run contract: exact commit, behavior under test, entrypoint
 expected observable result, local data/services, required external resources,
 authorization, and cleanup. Reuse established setup and permissions.
 
+Derive that contract from the original request and accepted constraints. Include
+a check that distinguishes the requested change from old behavior or a rejected
+workaround. For a required mechanism, combine source inspection with runtime
+evidence; matching the final output alone is not sufficient.
+
 Keep application data isolated. When the feature requires external services,
 use authorized disposable test resources. Resolve a genuine authorization gap
 early while continuing independent preparation. Do not build a separate local
