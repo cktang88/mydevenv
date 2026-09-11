@@ -5,6 +5,13 @@ description: Verify a PR or worktree with an independent temporary test against 
 
 # Verify End to End
 
+For Codex subagents, default to `gpt-5.6-terra` with medium reasoning for scenario
+design and harness repairs, and `gpt-5.6-luna` for known check commands. Use
+`gpt-6-astra` for adversarial coverage review. Choose a higher tier only for a
+concrete difficulty; Sol is not the default test runner.
+With a Codex model override, use `fork_turns="none"` and a self-contained handoff;
+full-history forks inherit the parent model. On other tools, use comparable tiers.
+
 First record a short run contract: exact commit, behavior under test, entrypoint,
 expected observable result, local data/services, required external resources,
 authorization, and cleanup. Reuse established setup and permissions.
@@ -17,6 +24,10 @@ substitute by default; state exactly what a partial check can prove.
 Keep one fresh-context subagent responsible for preflight, a small temporary
 scenario script, and its first run. Prefer an existing runner; extend only the
 missing setup, deadline, resource tracking, recovery, or cleanup steps.
+
+Dispatch that owner once the behavior and entrypoint are known. The main agent
+can inspect representative cases and prior evidence in parallel. Pass established
+setup details and failures so the owner does not repeat discovery.
 
 Before expanding verification, exercise one real application request through its
 normal input producer. Confirm setup records, runtime selection, provider
@@ -31,9 +42,10 @@ Fixtures or factories may create isolated setup records without stubbing the
 tested production path or its validation. Validate the resulting state and
 disclose skipped setup callbacks or other substitutions as coverage limitations.
 
-Have a second adversarial subagent return one prioritized coverage review.
-Resolve blockers, then run. The owner handles routine harness repairs and reruns
-affected checks. Request another review only when changes to assertions,
+Have a second adversarial subagent return one prioritized coverage review once the
+contract and assertions are available, while the owner prepares isolated fixtures
+and services. Resolve blockers before the affected runs. The owner handles routine
+harness repairs and reruns affected checks. Request another review only when changes to assertions,
 resource scope, or cleanup materially alter coverage or risk.
 
 Start with one real happy-path smoke and the suspected failure. Negative cases
