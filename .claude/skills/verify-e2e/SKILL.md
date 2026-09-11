@@ -5,12 +5,19 @@ description: Verify a PR or worktree with an independent temporary test against 
 
 # Verify End to End
 
-For Codex subagents, default to `gpt-5.6-terra` with medium reasoning for scenario
-design and harness repairs, and `gpt-5.6-luna` for known check commands. Use
-`gpt-6-astra` for adversarial coverage review. Choose a higher tier only for a
-concrete difficulty; Sol is not the default test runner.
-With a Codex model override, use `fork_turns="none"` and a self-contained handoff;
-full-history forks inherit the parent model. On other tools, use comparable tiers.
+Choose from the models available in the current tool, using these roles:
+
+- Lightweight: known check commands.
+- Standard coding: scenario design and harness repairs.
+- Strong reasoning: adversarial coverage review.
+
+Use the cheapest reliable option for each role across the available model list,
+not just one step below the parent model. Escalate when the task or observed
+results require it. Respect explicit user choices. Where supported, select the
+worker's model and task-appropriate reasoning effort explicitly and provide a
+self-contained handoff; check the tool's context-inheritance rules. Use only
+controls the tool exposes. If model selection or delegation is unavailable,
+continue with the available model or perform the scoped work locally.
 
 First record a short run contract: exact commit, behavior under test, entrypoint,
 expected observable result, local data/services, required external resources,

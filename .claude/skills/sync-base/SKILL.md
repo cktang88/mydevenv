@@ -5,12 +5,19 @@ description: Merge the latest base branch into a PR or worktree and account for 
 
 # Sync Base
 
-For Codex subagents, default to `gpt-5.6-terra` with medium reasoning for upstream
-code exploration and `gpt-5.6-luna` for known check commands. Use `gpt-6-astra` for
-difficult semantic conflicts. Choose a higher tier only for a concrete difficulty;
-Sol is not the default explorer. With a Codex model override, use
-`fork_turns="none"` and a self-contained handoff; full-history forks inherit the
-parent model. On other tools, use comparable tiers.
+Choose from the models available in the current tool, using these roles:
+
+- Lightweight: known check commands.
+- Standard coding: upstream code exploration.
+- Strong reasoning: difficult semantic conflicts.
+
+Use the cheapest reliable option for each role across the available model list,
+not just one step below the parent model. Escalate when the task or observed
+results require it. Respect explicit user choices. Where supported, select the
+worker's model and task-appropriate reasoning effort explicitly and provide a
+self-contained handoff; check the tool's context-inheritance rules. Use only
+controls the tool exposes. If model selection or delegation is unavailable,
+continue with the available model or perform the scoped work locally.
 
 Merge the latest intended base into the working branch. Use the supplied base,
 the PR's target branch, or the repository's default branch as appropriate.
