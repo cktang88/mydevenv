@@ -9,11 +9,17 @@ Read the reviews together with the PR and related code. Before editing, step
 back: what do the concerns collectively reveal about the underlying structure?
 Is there a higher-level or simpler fix that resolves several concerns cleanly?
 
+Use the original request and full review thread, including clarifications, to
+identify the acceptance criteria. Separate required behavior and mechanisms from
+suggested fixes. Check the chosen solution against those criteria before editing
+and before reporting a comment addressed.
+
 Group comments by shared root cause, including across PRs in a stack. Keep every
 comment ID, investigate each cause once at the pinned PR or stack tip, and check
 the introducing layer for attribution. Delegate independent unresolved groups
 concurrently as soon as they are identified, while the main agent examines shared
-structure. Pass the relevant comments, revisions, and existing evidence. Reuse
+structure. Pass the original request, acceptance criteria, relevant comments,
+revisions, and existing evidence. Reuse
 evidence while the relevant code remains unchanged; check findings without
 repeating the entire investigation. A single narrow group can stay with one owner.
 

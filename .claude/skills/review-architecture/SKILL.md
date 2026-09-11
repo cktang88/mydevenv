@@ -5,7 +5,10 @@ description: Review a PR or PR stack for a simpler overall design and unsupporte
 
 # Review Architecture
 
-Assess the PR or stack in the context of its requirements and related code.
+Assess the PR or stack against the original request, accepted constraints, and
+related code. Separate required outcomes and mechanisms from suggested fixes.
+An explicitly required mechanism is part of correctness. A different path with
+the same output still leaves that requirement unmet.
 Look for a simpler design that preserves the intended behavior and fits the
 existing codebase.
 
@@ -15,7 +18,8 @@ and independent correctness.
 
 After locating the affected boundaries, delegate independent caller, runtime, and
 ownership questions concurrently while the main agent studies the combined design.
-Give each agent a distinct question, pinned revisions, and existing evidence. Use
+Give each agent the original request and requirements, a distinct question,
+pinned revisions, and existing evidence. Use
 their code references to assess the findings rather than repeating the exploration.
 
 Question assumptions and special cases. What one or two changes would remove

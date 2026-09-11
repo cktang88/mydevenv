@@ -5,18 +5,27 @@ description: Implement features with maximum reuse and minimal focused changes t
 
 # Implement Feature
 
+Derive a short acceptance check from the original request and accepted constraints.
+Separate required behavior and mechanisms from suggested solutions. Include what
+would distinguish the requested change from old behavior or a rejected workaround.
+
 Reuse any branch, worktree, diagnosis, and current evidence already established
 for this task. Otherwise create a new branch and worktree from the freshly
 fetched default branch (`main` where applicable). Understand the requested
 behavior, then promptly delegate independent gaps in callers, existing reusable
 code, and test coverage while the main agent maps the design. Give each agent a
-bounded question, relevant paths and evidence, and a concrete result to return.
+bounded question, the original request and acceptance check, relevant paths and
+evidence, and a concrete result to return.
 Review their evidence instead of repeating their searches.
 
 For meaningful design tradeoffs, have strong reasoning subagents propose
 different implementations concurrently, grounded in that exploration. Ask for
 code pointers, pseudocode, and key signatures so alternatives are concrete enough
 to compare. A settled, direct change does not need competing design proposals.
+
+When asked to reuse a named mechanism, trace its input producer through execution
+before adding another path. If it conflicts with another accepted constraint,
+state that conflict rather than silently changing the acceptance check.
 
 Look for substantial existing pieces to reuse. Share the tradeoffs and recommended
 approach, incorporate feedback, and refine it as needed. Implement the smallest
@@ -44,6 +53,10 @@ appropriate to the feature and affected interactions.
 Commit, push, and open or update the PR. Then use [verify-e2e](../verify-e2e/SKILL.md), address
 any failures, and push the fixes. Use [address-reviews](../address-reviews/SKILL.md)
 for available PR feedback as needed, and push the resulting fixes too.
+
+Compare the final change and verification evidence with the acceptance check.
+Do not claim completion while an accepted requirement remains unmet, even if
+the checks pass.
 
 Finish with the PR link, a short explanation of the approach and reuse, and
 verification results or remaining gaps.
