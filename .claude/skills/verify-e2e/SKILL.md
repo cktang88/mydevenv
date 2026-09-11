@@ -14,19 +14,27 @@ use authorized disposable test resources. Resolve a genuine authorization gap
 early while continuing independent preparation. Do not build a separate local
 substitute by default; state exactly what a partial check can prove.
 
-Preflight the real boundary before expanding the test: boot the app, construct
-one representative payload, exercise one real request, and check required
-external operations with the worker's effective credentials. A read check does
-not prove write access. Check relevant runtime differences before claiming a
-production regression.
+Keep one fresh-context subagent responsible for preflight, a small temporary
+scenario script, and its first run. Prefer an existing runner; extend only the
+missing setup, deadline, resource tracking, recovery, or cleanup steps.
 
-Have a fresh-context subagent write a small temporary script from this contract.
-Use real local data and existing helpers. Avoid business-method stubs and
-factories; state any necessary substitutions and their coverage limits.
+Before expanding verification, exercise one real application request through its
+normal input producer. Confirm setup records, runtime selection, provider
+authentication, and required external operations with the worker's effective
+credentials. Read access does not prove write access. Resolve prerequisite
+failures before expanding. If this reproduces the target defect, preserve the
+failing check; fix and rerun it only if authorized. Check runtime differences
+before claiming a production regression.
+
+Do not stub behavior under test. Prefer production import or seed helpers.
+Fixtures or factories may create isolated setup records without stubbing the
+tested production path or its validation. Validate the resulting state and
+disclose skipped setup callbacks or other substitutions as coverage limitations.
 
 Have a second adversarial subagent return one prioritized coverage review.
-Resolve blockers, then run. Later reviews cover material changes to assertions,
-resource scope, or cleanup; routine harness repairs do not restart the review.
+Resolve blockers, then run. The owner handles routine harness repairs and reruns
+affected checks. Request another review only when changes to assertions,
+resource scope, or cleanup materially alter coverage or risk.
 
 Start with one real happy-path smoke and the suspected failure. Negative cases
 must prove the intended cause. Async waits must fail on unexpected terminal

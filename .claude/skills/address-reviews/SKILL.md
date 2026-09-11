@@ -9,6 +9,11 @@ Read the reviews together with the PR and related code. Before editing, step
 back: what do the concerns collectively reveal about the underlying structure?
 Is there a higher-level or simpler fix that resolves several concerns cleanly?
 
+For a stack, group comments across PRs by shared root cause. Keep every comment
+ID, investigate each cause once at the pinned stack tip, and check the introducing
+layer for attribution. Delegate only unresolved groups; reuse evidence while the
+relevant code remains unchanged.
+
 Trace recurring symptoms to their cause: misplaced decisions, repeated rules,
 or assumptions that make the implementation harder than it needs to be.
 

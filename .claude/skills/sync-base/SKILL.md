@@ -9,11 +9,19 @@ Merge the latest intended base into the working branch. Use the supplied base,
 the PR's target branch, or the repository's default branch as appropriate.
 Preserve uncommitted work and the existing branch history.
 
+For a stack, one integration owner keeps a brief record of base and layer SHAs,
+open findings, and the revisions each check covers. Propagate the base bottom to
+top and assess each upstream delta against the combined stack.
+
 Consider the intent of each incoming commit and how it affects this PR, even
 when Git reports no conflict. Adapt to moved code, new patterns, and changed
 behavior where relevant. Preserve functionality unless it is clearly obsolete
 or unnecessary, and explain any removal.
 
 Verify the combined behavior with checks appropriate to the affected interactions.
+Before the final push against a moving base, fetch and merge the latest delta.
+Rerun checks it invalidates; unrelated changes do not restart the architecture
+review.
+
 Summarize meaningful adaptations, results, and anything unverified. Update the
 remote PR branch when requested or already authorized.
