@@ -9,6 +9,11 @@ Assess the PR or stack in the context of its requirements and related code.
 Look for a simpler design that preserves the intended behavior and fits the
 existing codebase.
 
+For a stack, pin the base and tip and review their combined diff as one change
+first. Map the data flow, owning concepts, and necessary exceptions before
+delegating reviews by concern. Then inspect individual layers for dependency
+order and independent correctness.
+
 Question assumptions and special cases. What one or two changes would remove
 most of the complexity? Would a different structure make the problem easier?
 Use a greenfield design to explore alternatives, while accounting for the cost
