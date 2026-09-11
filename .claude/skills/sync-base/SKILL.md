@@ -13,6 +13,13 @@ For a stack, one integration owner keeps a brief record of base and layer SHAs,
 open findings, and the revisions each check covers. Propagate the base bottom to
 top and assess each upstream delta against the combined stack.
 
+Once the base and tip are pinned, delegate independent upstream impact checks by
+affected area while the integration owner handles the merge. Pass the pinned SHAs,
+changed paths, and prior findings. Impact agents read those snapshots with
+`git show`/`git diff` or an isolated checkout; keep Git mutations with the
+integration owner. Give test preparation and known check commands to a separate
+agent, and collect results against a stable revision before pushing.
+
 Consider the intent of each incoming commit and how it affects this PR, even
 when Git reports no conflict. Adapt to moved code, new patterns, and changed
 behavior where relevant. Preserve functionality unless it is clearly obsolete

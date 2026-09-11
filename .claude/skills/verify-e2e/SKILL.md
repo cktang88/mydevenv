@@ -18,6 +18,10 @@ Keep one fresh-context subagent responsible for preflight, a small temporary
 scenario script, and its first run. Prefer an existing runner; extend only the
 missing setup, deadline, resource tracking, recovery, or cleanup steps.
 
+Dispatch that owner once the behavior and entrypoint are known. The main agent
+can inspect representative cases and prior evidence in parallel. Pass established
+setup details and failures so the owner does not repeat discovery.
+
 Before expanding verification, exercise one real application request through its
 normal input producer. Confirm setup records, runtime selection, provider
 authentication, and required external operations with the worker's effective
@@ -31,9 +35,10 @@ Fixtures or factories may create isolated setup records without stubbing the
 tested production path or its validation. Validate the resulting state and
 disclose skipped setup callbacks or other substitutions as coverage limitations.
 
-Have a second adversarial subagent return one prioritized coverage review.
-Resolve blockers, then run. The owner handles routine harness repairs and reruns
-affected checks. Request another review only when changes to assertions,
+Have a second adversarial subagent return one prioritized coverage review once the
+contract and assertions are available, while the owner prepares isolated fixtures
+and services. Resolve blockers before the affected runs. The owner handles routine
+harness repairs and reruns affected checks. Request another review only when changes to assertions,
 resource scope, or cleanup materially alter coverage or risk.
 
 Start with one real happy-path smoke and the suspected failure. Negative cases

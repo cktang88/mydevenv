@@ -13,6 +13,11 @@ For a stack, pin the base and tip and review their combined diff first. Trace
 the data flow and shared owners across PRs, then check each layer's dependencies
 and independent correctness.
 
+After locating the affected boundaries, delegate independent caller, runtime, and
+ownership questions concurrently while the main agent studies the combined design.
+Give each agent a distinct question, pinned revisions, and existing evidence. Use
+their code references to assess the findings rather than repeating the exploration.
+
 Question assumptions and special cases. What one or two changes would remove
 most of the complexity? Would a different structure make the problem easier?
 Use a greenfield design to explore alternatives, while accounting for the cost
