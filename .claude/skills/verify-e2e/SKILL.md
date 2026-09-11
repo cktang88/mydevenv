@@ -14,32 +14,27 @@ use authorized disposable test resources. Resolve a genuine authorization gap
 early while continuing independent preparation. Do not build a separate local
 substitute by default; state exactly what a partial check can prove.
 
-Have one fresh-context subagent own prerequisite checks, a small temporary
-scenario script, and its first run. Reuse verified machinery for deadlines,
-process ownership, durable resource IDs, recovery, and exact cleanup. Scenario
-code should contain inputs, actions, and assertions.
+Keep one fresh-context subagent responsible for preflight, a small temporary
+scenario script, and its first run. Prefer an existing runner; extend only the
+missing setup, deadline, resource tracking, recovery, or cleanup steps.
 
-Preflight one minimal real application request through its normal input producer
-before building a larger test. Check required setup records, the selected runtime
-environment, provider authentication, and external operations with the worker's
-effective credentials. A standalone cloud probe does not prove the application
-path; read access does not prove write access. Resolve prerequisite failures
-before expanding. If a fix is authorized and the smoke reproduces the target
-defect, fix it and rerun the same check. Check runtime differences before
-claiming a production regression.
+Before expanding verification, exercise one real application request through its
+normal input producer. Confirm setup records, runtime selection, provider
+authentication, and required external operations with the worker's effective
+credentials. Read access does not prove write access. Resolve prerequisite
+failures before expanding. If this reproduces the target defect, preserve the
+failing check; fix and rerun it only if authorized. Check runtime differences
+before claiming a production regression.
 
 Do not stub behavior under test. Prefer production import or seed helpers.
-Existing fixture or factory helpers may construct isolated setup records if they
-do not install active stubs or mocks that replace the production path under test.
-Validate the resulting state and disclose skipped setup callbacks as coverage
-limitations. Loading a factory library is not itself using it. State other
-necessary substitutions and their coverage limits.
+Fixtures or factories may create isolated setup records without stubbing the
+tested production path or its validation. Validate the resulting state and
+disclose skipped setup callbacks or other substitutions as coverage limitations.
 
 Have a second adversarial subagent return one prioritized coverage review.
-Resolve blockers, then run. The owner can repair routine harness issues and rerun
-affected checks. Further review is for material changes to coverage or risk,
-including assertions, resource scope, and cleanup. It is not a new authorization
-gate; existing permissions still govern execution.
+Resolve blockers, then run. The owner handles routine harness repairs and reruns
+affected checks. Request another review only when changes to assertions,
+resource scope, or cleanup materially alter coverage or risk.
 
 Start with one real happy-path smoke and the suspected failure. Negative cases
 must prove the intended cause. Async waits must fail on unexpected terminal
