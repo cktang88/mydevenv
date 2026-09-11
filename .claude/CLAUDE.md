@@ -2,7 +2,7 @@
 
 ## Context Management
 
-* Batch independent checks and tool calls together.
+* Before requesting tools, identify the independent reads and checks needed next and batch them in one round. Run dependent calls after their inputs are known.
 * Do not print whole files or raw log dumps. Read specific sections surgically.
 * Limit command output to 100 relevant lines.
 * When using MCP servers such as Datadog or running SQL queries, limit the output to avoid spamming the context window.
@@ -12,8 +12,9 @@
 * Keep planning, synthesis, difficult design decisions, and final review with the strongest available reasoning models.
 * Default routine code exploration, evidence gathering, and scoped implementation to the lowest-cost reliable coding model. Use the cheapest reliable model for simple lookups and prescribed test commands. Choose across the full available model list; merely being cheaper than the parent is not enough. Escalate a worker only when the task or its results show a need.
 * Select each worker's model and reasoning effort explicitly when the tool supports it. Use only the context needed for its task, and check the tool's inheritance rules so routine workers do not silently inherit the parent's expensive settings. Respect explicit user choices and use the available controls in any agent tool.
-* When subagents are available, start independent exploration, evidence collection, and test preparation as soon as their scope is clear, while the main agent continues useful work. Give each worker a distinct question, relevant paths, and expected result. Check its evidence without repeating the whole investigation. Keep shared edits with one owner and reserve capacity for required fresh reviews.
-* Run automated tests and pre-commit checks in subagents when delegation is available. Continue independent work while they run, but collect their actual results before submission. Use the available model or work locally when the tool cannot delegate or select models.
+* Throughout the task, both the lead and delegated agents should delegate bounded independent work when it could save time or improve quality, within the tool's capabilities and agent limits. Start exploration, evidence collection, and test preparation as soon as their scope is clear. Give each worker a distinct question, relevant paths, and expected result. Check its evidence without repeating the whole investigation. Keep shared edits with one owner and reserve capacity for required fresh reviews.
+* Use asynchronous delegation where supported. After dispatch, continue useful independent work. Wait only when pending results block further useful progress. Do not immediately wait for or repeatedly poll each worker by default. Keep messages between agents clear and readable.
+* Run automated tests and pre-commit checks in subagents when delegation is available, and collect their actual results before submission. Use the available model or work locally when the tool cannot delegate or select models.
 
 ## Code and Architecture Organization
 

@@ -123,6 +123,15 @@ The skills describe the work to split for each workflow. When using them outside
 this checkout, load the shared instructions through your tool's personal
 instructions; linking a skill alone does not load that policy.
 
+The delegation policy draws on the **Subagent delegation** section in
+[OpenAI's model guidance](https://developers.openai.com/api/docs/guides/latest-model)
+and the **Let the lead agent keep working while subagents run** and **Batch
+independent tool calls in agent loops** sections in
+[Anthropic's prompting guide](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5-1).
+For a custom agent runtime, asynchronous delegation needs a start operation that
+returns immediately, later delivery of results, and a separate wait operation.
+Prompt instructions alone cannot make a blocking tool asynchronous.
+
 The source files live in [`.claude/skills`](./.claude/skills).
 [`.agents/skills`](./.agents/skills) contains relative symlinks to the same
 skills for Codex, so edits apply to both tools. Codex automatic invocation is
