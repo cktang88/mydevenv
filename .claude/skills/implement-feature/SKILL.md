@@ -1,13 +1,14 @@
 ---
 name: implement-feature
-description: Implement features with maximum reuse and minimal focused changes, from a fresh worktree through a tested PR. Use when asked to build or implement a feature.
+description: Implement features with maximum reuse and minimal focused changes through a tested PR. Also use when debug-and-fix hands off a larger or complex fix.
 ---
 
 # Implement Feature
 
-Create a new branch and worktree from the freshly fetched default branch
-(`main` where applicable). Understand the requested behavior and have subagents
-explore the relevant code to establish how the system works today.
+Reuse any branch, worktree, diagnosis, and current evidence already established
+for this task. Otherwise create a new branch and worktree from the freshly
+fetched default branch (`main` where applicable). Understand the requested
+behavior and have subagents explore gaps in how the system works today.
 
 Have several strong reasoning subagents independently propose different
 implementations, grounded in that exploration. Ask for code pointers, pseudocode,
@@ -31,7 +32,7 @@ Have fresh adversarial subagents look for bugs and edge cases;
 fix supported findings whose likelihood and impact justify the change. Run checks
 appropriate to the feature and affected interactions.
 
-Commit, push, and open a PR. Then use [verify-e2e](../verify-e2e/SKILL.md), address
+Commit, push, and open or update the PR. Then use [verify-e2e](../verify-e2e/SKILL.md), address
 any failures, and push the fixes. Use [address-reviews](../address-reviews/SKILL.md)
 for available PR feedback as needed, and push the resulting fixes too.
 
