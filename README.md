@@ -117,6 +117,12 @@ task when the target is clear and asks when it is ambiguous.
 `pr-review-reality-check` is now included in `address-reviews`. Use `address-reviews`
 for both review fixes and analysis-only triage of feedback.
 
+Shared subagent model selection and delegation defaults live in
+[`.claude/CLAUDE.md`](./.claude/CLAUDE.md), also exposed through `AGENTS.md`.
+The skills describe the work to split for each workflow. When using them outside
+this checkout, load the shared instructions through your tool's personal
+instructions; linking a skill alone does not load that policy.
+
 The source files live in [`.claude/skills`](./.claude/skills).
 [`.agents/skills`](./.agents/skills) contains relative symlinks to the same
 skills for Codex, so edits apply to both tools. Codex automatic invocation is

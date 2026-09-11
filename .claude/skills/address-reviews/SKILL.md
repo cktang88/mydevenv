@@ -5,20 +5,6 @@ description: Address, fix, or evaluate PR reviews by finding shared root causes,
 
 # Address Reviews
 
-Choose from the models available in the current tool, using these roles:
-
-- Lightweight: known check commands.
-- Standard coding: evidence gathering and scoped fixes.
-- Strong reasoning: difficult root-cause or architectural judgments.
-
-Use the cheapest reliable option for each role across the available model list,
-not just one step below the parent model. Escalate when the task or observed
-results require it. Respect explicit user choices. Where supported, select the
-worker's model and task-appropriate reasoning effort explicitly and provide a
-self-contained handoff; check the tool's context-inheritance rules. Use only
-controls the tool exposes. If model selection or delegation is unavailable,
-continue with the available model or perform the scoped work locally.
-
 Read the reviews together with the PR and related code. Before editing, step
 back: what do the concerns collectively reveal about the underlying structure?
 Is there a higher-level or simpler fix that resolves several concerns cleanly?

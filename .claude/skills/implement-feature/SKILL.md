@@ -5,20 +5,6 @@ description: Implement features with maximum reuse and minimal focused changes t
 
 # Implement Feature
 
-Choose from the models available in the current tool, using these roles:
-
-- Lightweight: known check commands.
-- Standard coding: code exploration and scoped implementation.
-- Strong reasoning: difficult design decisions and adversarial review.
-
-Use the cheapest reliable option for each role across the available model list,
-not just one step below the parent model. Escalate when the task or observed
-results require it. Respect explicit user choices. Where supported, select the
-worker's model and task-appropriate reasoning effort explicitly and provide a
-self-contained handoff; check the tool's context-inheritance rules. Use only
-controls the tool exposes. If model selection or delegation is unavailable,
-continue with the available model or perform the scoped work locally.
-
 Reuse any branch, worktree, diagnosis, and current evidence already established
 for this task. Otherwise create a new branch and worktree from the freshly
 fetched default branch (`main` where applicable). Understand the requested

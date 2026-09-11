@@ -9,10 +9,11 @@
 
 ## Subagents
 
-* Use the highest-intelligence models for planning, delegating to subagents, reviewing subagent output, and other heavy-thinking tasks.
-* Use cheaper subagents for tasks requiring less reasoning, such as exploring code, and for context-intensive or tangential work that could pollute the main context window.
-* Dynamically choose the subagent model based on the difficulty of the task.
-* Always run any automated tests and pre-commit etc in subagents so that it doesn't block the main thread. Main agent should continue work as if those are assumed to pass.
+* Keep planning, synthesis, difficult design decisions, and final review with the strongest available reasoning models.
+* Default routine code exploration, evidence gathering, and scoped implementation to the lowest-cost reliable coding model. Use the cheapest reliable model for simple lookups and prescribed test commands. Choose across the full available model list; merely being cheaper than the parent is not enough. Escalate a worker only when the task or its results show a need.
+* Select each worker's model and reasoning effort explicitly when the tool supports it. Use only the context needed for its task, and check the tool's inheritance rules so routine workers do not silently inherit the parent's expensive settings. Respect explicit user choices and use the available controls in any agent tool.
+* When subagents are available, start independent exploration, evidence collection, and test preparation as soon as their scope is clear, while the main agent continues useful work. Give each worker a distinct question, relevant paths, and expected result. Check its evidence without repeating the whole investigation. Keep shared edits with one owner and reserve capacity for required fresh reviews.
+* Run automated tests and pre-commit checks in subagents when delegation is available. Continue independent work while they run, but collect their actual results before submission. Use the available model or work locally when the tool cannot delegate or select models.
 
 ## Code and Architecture Organization
 

@@ -5,20 +5,6 @@ description: Review a PR or PR stack for a simpler overall design and unsupporte
 
 # Review Architecture
 
-Choose from the models available in the current tool, using these roles:
-
-- Lightweight: mechanical inventories.
-- Standard coding: caller, dependency, and ownership exploration.
-- Strong reasoning: design alternatives and adversarial review.
-
-Use the cheapest reliable option for each role across the available model list,
-not just one step below the parent model. Escalate when the task or observed
-results require it. Respect explicit user choices. Where supported, select the
-worker's model and task-appropriate reasoning effort explicitly and provide a
-self-contained handoff; check the tool's context-inheritance rules. Use only
-controls the tool exposes. If model selection or delegation is unavailable,
-continue with the available model or perform the scoped work locally.
-
 Assess the PR or stack in the context of its requirements and related code.
 Look for a simpler design that preserves the intended behavior and fits the
 existing codebase.

@@ -5,20 +5,6 @@ description: Verify a PR or worktree with an independent temporary test against 
 
 # Verify End to End
 
-Choose from the models available in the current tool, using these roles:
-
-- Lightweight: known check commands.
-- Standard coding: scenario design and harness repairs.
-- Strong reasoning: adversarial coverage review.
-
-Use the cheapest reliable option for each role across the available model list,
-not just one step below the parent model. Escalate when the task or observed
-results require it. Respect explicit user choices. Where supported, select the
-worker's model and task-appropriate reasoning effort explicitly and provide a
-self-contained handoff; check the tool's context-inheritance rules. Use only
-controls the tool exposes. If model selection or delegation is unavailable,
-continue with the available model or perform the scoped work locally.
-
 First record a short run contract: exact commit, behavior under test, entrypoint,
 expected observable result, local data/services, required external resources,
 authorization, and cleanup. Reuse established setup and permissions.

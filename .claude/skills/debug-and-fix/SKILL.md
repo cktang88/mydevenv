@@ -5,20 +5,6 @@ description: Investigate a production issue, verify its root cause, and deliver 
 
 # Debug and Fix
 
-Choose from the models available in the current tool, using these roles:
-
-- Lightweight: known test commands.
-- Standard coding: code/history tracing and runtime evidence.
-- Strong reasoning: difficult causal reasoning and adversarial review.
-
-Use the cheapest reliable option for each role across the available model list,
-not just one step below the parent model. Escalate when the task or observed
-results require it. Respect explicit user choices. Where supported, select the
-worker's model and task-appropriate reasoning effort explicitly and provide a
-self-contained handoff; check the tool's context-inheritance rules. Use only
-controls the tool exposes. If model selection or delegation is unavailable,
-continue with the available model or perform the scoped work locally.
-
 Investigate using Datadog logs and traces, targeted read-only production database
 queries, and local reproduction where useful. Build an explanation that connects
 the observed failure to its cause in the code and data.
