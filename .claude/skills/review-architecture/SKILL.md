@@ -22,6 +22,11 @@ Give each agent the original request and requirements, a distinct question,
 pinned revisions, and existing evidence. Use
 their code references to assess the findings rather than repeating the exploration.
 
+Before simplifying an implementation, check whether its behavior is needed.
+For each costly special case, identify what requested outcome or existing
+contract would fail without it. Consider removing it before adding helpers or
+abstractions; tests added by this PR do not establish the requirement.
+
 Question assumptions and special cases. What one or two changes would remove
 most of the complexity? Would a different structure make the problem easier?
 Use a greenfield design to explore alternatives, while accounting for the cost
