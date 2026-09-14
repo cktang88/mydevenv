@@ -9,6 +9,11 @@ Derive a short acceptance check from the original request and accepted constrain
 Separate required behavior and mechanisms from suggested solutions. Include what
 would distinguish the requested change from old behavior or a rejected workaround.
 
+For each added behavior, identify the user request or existing contract that
+requires it. Agent proposals, implementation, and newly added tests do not
+establish requirements. If removing that behavior still satisfies the request
+and preserves existing contracts, omit it.
+
 Reuse any branch, worktree, diagnosis, and current evidence already established
 for this task. Otherwise create a new branch and worktree from the freshly
 fetched default branch (`main` where applicable). Understand the requested
@@ -16,7 +21,9 @@ behavior, then promptly delegate independent gaps in callers, existing reusable
 code, and test coverage while the main agent maps the design. Give each agent a
 bounded question, the original request and acceptance check, relevant paths and
 evidence, and a concrete result to return.
-Review their evidence instead of repeating their searches.
+Label assumptions explicitly and pass along any user-set scope or change budget.
+Workers should report work that would exceed these limits instead of expanding
+the assignment themselves. Review their evidence instead of repeating their searches.
 
 For meaningful design tradeoffs, have strong reasoning subagents propose
 different implementations concurrently, grounded in that exploration. Ask for
