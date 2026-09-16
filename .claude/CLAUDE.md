@@ -32,7 +32,7 @@
 4. Write composable code using small functions and small files.
 5. Never guess how third-party SDKs, APIs, libraries, or external dependencies work. Always read their source code directly and thoroughly.
 6. Never force-push without asking.
-7. Support claims with exact code lines, functions, or other direct evidence whenever possible.
+7. Support claims with exact code lines, functions, or other direct evidence whenever possible. Distinguish verified facts, inferences, and unknowns. A search with no matches does not prove a capability or credential is absent; check its producer and configuration before ruling out an alternative. When evidence changes a recommendation, state what changed.
 8. Before writing new code, look for similar code in the codebase that can be reused. Do not blindly add duplicate code. If a similar abstraction already exists, consider extending it or using an adapter.
 9. Use WebMock to mock HTTP requests in tests and specs.
 10. Minimize the use of `T.untyped`. Prefer narrow types whenever possible.
