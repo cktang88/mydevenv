@@ -166,7 +166,7 @@ Not installed by the script:
   `` ` `` ↔ caps-lock swap
 - [Arc Browser](https://arc.net/) (Chrome with React DevTools for FE work)
 - [Cursor](https://cursor.sh/) — see [.cursorrules](./.cursorrules)
-- [Warp](https://warp.dev/) terminal
+- [Ghostty](https://ghostty.org/download) - terminal
 - [Codex app](https://developers.openai.com/codex/app) — OpenAI's coding agent
   (download the GUI app rather than the CLI)
 
