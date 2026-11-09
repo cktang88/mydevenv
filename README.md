@@ -26,7 +26,7 @@ Installed by `install.sh`:
   `bun` via the official curl installer
 - **Python**: `uv` via Astral's standalone installer (supports `uv self update`);
   `pip` bumped to ≥ 26.0
-- **Shell**: oh-my-zsh + `zsh-autosuggestions` + `zsh-syntax-highlighting`
+- **Shell**: Ghostty + oh-my-zsh + `zsh-autosuggestions` + `zsh-syntax-highlighting`
 
 Notes:
 
@@ -165,10 +165,10 @@ Not installed by the script:
 - [Karbiner-Elements](https://karabiner-elements.pqrs.org/) — for the
   `` ` `` ↔ caps-lock swap
 - [Arc Browser](https://arc.net/) (Chrome with React DevTools for FE work)
-- [Cursor](https://cursor.sh/) — see [.cursorrules](./.cursorrules)
+- [Zed](https://zed.dev/download) - Zed IDE
 - [Ghostty](https://ghostty.org/download) - terminal
-- [Codex app](https://developers.openai.com/codex/app) — OpenAI's coding agent
-  (download the GUI app rather than the CLI)
+- [Codex app](https://developers.openai.com/codex/app) — Codex GUI app
+- [Claude app](https://code.claude.com/docs/en/desktop-quickstart) - claude code GUI app
 
 
 Chrome/Arc extensions
@@ -191,15 +191,3 @@ ctrl + down              show all windows of the current app
 ctrl + `                 switch between windows of the SAME app
 ctrl + tab               switch between apps
 ```
-
-VSCode / Cursor extensions
----
-
-- Git Lens — git blame + "copy remote URL" context menu
-- [jock.svg](https://marketplace.visualstudio.com/items?itemName=jock.svg) — preview SVGs
-- [sysoev.vscode-open-in-github](https://marketplace.visualstudio.com/items?itemName=sysoev.vscode-open-in-github)
-- Material Icon Theme
-- [Rainbow CSV](https://marketplace.visualstudio.com/items?itemName=mechatroner.rainbow-csv)
-- Night Owl (syntax highlighting)
-
-⚠️ Set "Changed Files" view to **tree**.
