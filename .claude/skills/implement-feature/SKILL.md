@@ -34,6 +34,12 @@ When asked to reuse a named mechanism, trace its input producer through executio
 before adding another path. If it conflicts with another accepted constraint,
 state that conflict rather than silently changing the acceptance check.
 
+Before adding a wrapper around a dependency, inspect its native entrypoint and
+configuration in the version used by the application. Start with what it handles,
+implement only the remaining required integration. When a design changes, check
+which earlier adapters and safeguards have lost their purpose rather than
+carrying them forward automatically.
+
 Look for substantial existing pieces to reuse. Share the tradeoffs and recommended
 approach, incorporate feedback, and refine it as needed. Implement the smallest
 clear change that fully delivers the feature; aim to write as little new code

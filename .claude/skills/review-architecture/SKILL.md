@@ -16,6 +16,15 @@ For a stack, pin the base and tip and review their combined diff first. Trace
 the data flow and shared owners across PRs, then check each layer's dependencies
 and independent correctness.
 
+Before refining the current structure, compare it with one materially different
+end-to-end design. Search related code for an existing workflow or contract that
+could accept the new behavior through a thin translator or orchestrator. Compare
+the concrete inputs, data flow, ownership, and branches. Include the dependency's
+native entrypoint where relevant, checking source or help for the version used
+by the application. Identify the remaining integration before designing a wrapper.
+Moving the same decisions into another module is organization, not an
+architecture simplification.
+
 After locating the affected boundaries, delegate independent caller, runtime, and
 ownership questions concurrently while the main agent studies the combined design.
 Give each agent the original request and requirements, a distinct question,
@@ -27,10 +36,21 @@ For each costly special case, identify what requested outcome or existing
 contract would fail without it. Consider removing it before adding helpers or
 abstractions; tests added by this PR do not establish the requirement.
 
-Question assumptions and special cases. What one or two changes would remove
-most of the complexity? Would a different structure make the problem easier?
-Use a greenfield design to explore alternatives, while accounting for the cost
-of changing the existing implementation.
+Do not justify a layer solely by the work currently inside it. Trace who produces
+and consumes its inputs; check whether an existing boundary can own that work
+and remove the layer. A framework rule may constrain where an operation runs
+without requiring our chosen decomposition. Verify claimed access or ownership
+barriers in callers and configuration before treating them as constraints.
+
+Compare total complexity, including changes required in callers, configuration,
+credentials, cleanup, and compatibility. Distinguish work deleted from work moved.
+An alternative that looks shorter in one file may cost more overall; estimates
+should name the assumptions that could change the recommendation.
+
+If the user repeats a simplification request or says the plumbing is still too
+complex, treat the current framing as unproven. Re-derive the required outcomes
+and repeat the boundary and composition comparison before doing another local
+cleanup pass.
 
 Use independent adversarial subagents to challenge the approach and assumptions
 with concrete evidence. Assign reviews by concern, not automatically one per PR.
