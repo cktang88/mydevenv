@@ -1,6 +1,6 @@
 ---
 name: reuse-first
-description: Find the existing flow to extend before designing or writing new code. Use before proposing a design (even in a chat answer or a drafted reply), before adding an endpoint, route, service, job, flag, helper, or component, and whenever the user asks whether something can be reused or says there must be a simpler way.
+description: Finds the existing flow to extend before any new code is designed or written. Use before proposing a design, even in a chat answer or a drafted reply, and before adding an endpoint, route, service, job, flag, helper, or component. For doubts about a design or PR that already exists, such as "is there a simpler way", use review-architecture, which runs this search.
 ---
 
 # Reuse First

@@ -1,42 +1,44 @@
 ---
 name: debug-and-fix
-description: Investigate a production issue, verify its root cause, and deliver a tested fix as a PR. Use for requests to take an issue from investigation through a fix.
+description: Finds the cause of a failure, then the cause behind that cause, and delivers a tested fix as a draft PR. Use whenever something is failing, erroring, flaky, slow, stuck, timing out, or giving wrong results and the user wants to know why or wants it fixed, with wording such as "why is this failing", "figure out why and fix it", "root cause this", "debug and fix", "fix these errors", or "investigate", or with a pasted error, log, failing CI run, or ticket. Use it for a diagnosis without a fix too, and for failures in CI, tools, and third-party frameworks as well as production. For a requested change with no failure to explain, use implement-feature.
 ---
 
 # Debug and Fix
 
-Investigate using Datadog logs and traces, targeted read-only production database
-queries, and local reproduction where useful. Build an explanation that connects
-the observed failure to its cause in the code and data.
+Build an explanation that connects the observed failure to its cause in the code
+and data, using logs, traces, read-only production queries, and a local
+reproduction where useful. Try to disprove it before you trust it.
 
-As soon as independent questions are clear, delegate code/history tracing and
-runtime evidence gathering concurrently while the main agent tests the leading
-hypothesis. Pass the symptom, time range, relevant paths, and established evidence;
-ask for concise findings with source locations and remaining uncertainty. Do not
-wait for a complete diagnosis before delegating or repeat an agent's searches.
+## Second-order why
 
-Have independent adversarial subagents try to disprove the explanation, find contradictory
-evidence, or identify alternative causes. Follow the evidence and make any
-remaining uncertainty clear.
+The first cause that explains the symptom is usually one level too shallow, and
+a fix at that level comes back as the next bug. Write the chain: symptom, direct
+cause, the cause of that cause, and what owns it. Then check the fix against
+these questions. Each one comes from a past fix that was too shallow.
 
-Once the cause is supported, use
-[implement-feature](../implement-feature/SKILL.md) before coding if the fix needs
-nontrivial design tradeoffs or is expected to exceed 200 non-generated changed lines
-(additions plus deletions, including tests). If the actual diff crosses that
-threshold later, use it before opening or updating the PR. Carry forward the
-confirmed diagnosis and evidence.
+- Does the fix prevent the failure, or only describe it better? A clearer error,
+  an earlier rejection, a retry, or a longer timeout leaves the cause in place.
+- Is this one instance of a shape? If the fix names one agent, provider,
+  customer, or file, or two fixes look alike, fix the missing concept instead.
+- Why is this limit, default, or number what it is? Who set it, and is it
+  applied twice?
+- What is an existing patch or special case compensating for? Removing the need
+  beats moving the patch.
+- Why did the last fix in this area miss this case?
+- Which mechanisms are still unread? Check the owning tool's source and docs for
+  a native setting, hook, or lifecycle before hand-rolling one.
+- How big is the problem compared with the fix? Count affected runs or users.
 
-For a small, direct fix, use a new worktree from the latest default branch unless
-one already exists for this task. Use [reuse-first](../reuse-first/SKILL.md) before
-adding any new path. Implement the smallest effective fix, verify it
-against the failure, run appropriate checks, and commit, push, and open or update
-the PR.
+Fix at the level that owns the cause. If that level cannot change now, ship the
+smallest stopgap, call it a stopgap, and link the real fix. Several similar
+failures get one shared investigation before any per-failure fix.
 
-Give test preparation and execution to a separate agent while the main agent
-works on the fix. Keep edits to each file with one owner, coordinate runs against
-a stable revision, and collect the actual results before submission. Reserve
-capacity for required fresh reviews; reuse existing agents for follow-up work
-instead of exceeding the agent limit.
+## Fix
 
-Briefly report the cause, evidence, verification, and PR link. If the cause remains
-uncertain or a check is unavailable, explain the gap and the next useful check.
+For a small, direct fix: [reuse-first](../reuse-first/SKILL.md), the smallest
+change that removes the cause, a check against the original failure, and a draft
+PR. Use [implement-feature](../implement-feature/SKILL.md) when the fix needs
+design tradeoffs or passes about 200 changed lines.
+
+Report the chain, which level the fix addresses, the evidence, the verification,
+and the PR link. Say what is still uncertain or left unfixed.

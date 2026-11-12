@@ -32,6 +32,15 @@
 * Validate and normalize data at boundaries. Pass narrow, typed domain values internally.
 
 
+## Skills
+
+Load the matching skill before you act. A skill costs one tool call, and each of these exists because work without it had to be redone.
+
+* `implement-feature`: before you write or change code for a request. This includes a short go-ahead such as "yes, do it" in the middle of a conversation, and a quick proof of concept.
+* `debug-and-fix`: when something fails, errors, or gives wrong results and the cause is not proven yet. Find the cause behind the first cause before you fix.
+* `review-architecture`: before you open or update a PR over about 100 changed lines, and when the user asks if there is a simpler or better way.
+* `reuse-first`: before any design. See rule 8.
+
 ## Pull Request Descriptions
 
 * Keep all URL links unchanged.

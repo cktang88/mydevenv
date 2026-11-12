@@ -25,6 +25,8 @@ repeating the entire investigation. A single narrow group can stay with one owne
 
 Trace recurring symptoms to their cause: misplaced decisions, repeated rules,
 or assumptions that make the implementation harder than it needs to be.
+For a reported bug, apply the second-order-why questions in
+[debug-and-fix](../debug-and-fix/SKILL.md) before choosing a fix.
 
 Check claims against real callers, data, and existing guards. Compare with the
 base branch to distinguish problems introduced or worsened by this PR from
