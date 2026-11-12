@@ -27,7 +27,8 @@ threshold later, use it before opening or updating the PR. Carry forward the
 confirmed diagnosis and evidence.
 
 For a small, direct fix, use a new worktree from the latest default branch unless
-one already exists for this task. Implement the smallest effective fix, verify it
+one already exists for this task. Use [reuse-first](../reuse-first/SKILL.md) before
+adding any new path. Implement the smallest effective fix, verify it
 against the failure, run appropriate checks, and commit, push, and open or update
 the PR.
 
