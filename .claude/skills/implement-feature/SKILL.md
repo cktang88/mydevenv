@@ -34,7 +34,8 @@ When asked to reuse a named mechanism, trace its input producer through executio
 before adding another path. If it conflicts with another accepted constraint,
 state that conflict rather than silently changing the acceptance check.
 
-Look for substantial existing pieces to reuse. Share the tradeoffs and recommended
+Use [reuse-first](../reuse-first/SKILL.md) before any design, including one
+sketched in conversation. Share the tradeoffs and recommended
 approach, incorporate feedback, and refine it as needed. Implement the smallest
 clear change that fully delivers the feature; aim to write as little new code
 as possible.

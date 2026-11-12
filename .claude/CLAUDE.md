@@ -33,7 +33,11 @@
 5. Never guess how third-party SDKs, APIs, libraries, or external dependencies work. Always read their source code directly and thoroughly.
 6. Never force-push without asking.
 7. Support claims with exact code lines, functions, or other direct evidence whenever possible.
-8. Before writing new code, look for similar code in the codebase that can be reused. Do not blindly add duplicate code. If a similar abstraction already exists, consider extending it or using an adapter.
+8. Always search for reusable code before you design or write anything new. This includes a design you only sketch in a chat answer.
+   * Describe the need as a shape (for example "load something on demand for one stored record without saving it"). Find the existing end-to-end flow with that shape: its endpoint, caller, permission check, and config switch. Trace it before you propose anything.
+   * Extend that flow or use an adapter. Never add duplicate code.
+   * If your design needs a new route, flag, or a check that exists nowhere else in the codebase, stop and look at how existing code handles it.
+   * Say in the summary or PR which existing flow you extended, or why none fit.
 9. Use WebMock to mock HTTP requests in tests and specs.
 10. Minimize the use of `T.untyped`. Prefer narrow types whenever possible.
 
