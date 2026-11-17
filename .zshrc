@@ -108,4 +108,7 @@ export FZF_COMPLETION_TRIGGER='**'
 # zoxide enabling
 eval "$(zoxide init zsh)"
 
+# Claude Code: turn on Code Mode (experimental) in terminal sessions.
+export CLAUDE_CODE_EXPERIMENTAL_CODE_MODE=1
+
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
