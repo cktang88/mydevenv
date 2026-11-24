@@ -5,7 +5,7 @@ description: Builds a requested code change end to end as a tested draft PR, sca
 
 # Implement Feature
 
-Every change gets these four steps, including a proof of concept or a quick
+Every change gets these five steps, including a proof of concept or a quick
 illustration. They are cheap, and past changes went wrong where they were skipped.
 
 1. Acceptance check. Write what the request requires and what would tell the
@@ -17,7 +17,16 @@ illustration. They are cheap, and past changes went wrong where they were skippe
    instead of quietly changing the goal.
 3. The smallest clear change with focused tests, on a fresh branch and worktree
    unless one already exists for this task.
-4. [review-architecture](../review-architecture/SKILL.md) on your own diff
+4. Blast-radius check, for what tests by the same author miss:
+   - Readers: when stored data changes meaning or shape, find every reader
+     (serializers, exports, prompt variables, workers), not only the callers
+     of changed methods.
+   - Bad calls: the same action twice or at once, malformed or empty input,
+     and every other path into the changed code, such as retry or regrade.
+     Add a failing test for each case that applies.
+   - Whole class: for a leak or a bug pattern, list every instance in the
+     source, third-party code included, before you patch one.
+5. [review-architecture](../review-architecture/SKILL.md) on your own diff
    before the PR opens or updates. Apply the worthwhile simplifications.
 
 Then open or update the draft PR.
